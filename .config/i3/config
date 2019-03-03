@@ -188,14 +188,18 @@ mode "$mode_gaps" {
         bindsym plus  gaps inner all plus 5
         bindsym minus gaps inner all minus 5
         bindsym 0     gaps inner all set 0
-
-        bindsym Shift+plus  gaps outer all plus 5
+        bindsym d     gaps inner all set 15 
+	
+	bindsym Shift+plus  gaps outer all plus 5
         bindsym Shift+minus gaps outer all minus 5
         bindsym Shift+0     gaps outer all set 0
+        bindsym Shift+d     gaps outer all set 0
+
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym $mod+g mode "default"
+        bindsym g mode "default"
 }
 
 gaps inner 15
