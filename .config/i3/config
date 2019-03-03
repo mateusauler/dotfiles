@@ -231,12 +231,12 @@ bindsym XF86AudioPrev exec playerctl previous
 set $power_menu System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (p) shutdown
 
 mode "$power_menu" {
-    bindsym l exec --no-startup-id i3lock --color "#222222", mode "default"
-    bindsym e exec --no-startup-id i3-msg exit, mode "default"
-    bindsym s exec --no-startup-id systemctl suspend, mode "default"
-    bindsym h exec --no-startup-id systemctl hibernate, mode "default"
-    bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym p exec --no-startup-id systemctl poweroff, mode "default"
+    bindsym l exec --no-startup-id "$HOME/.scripts/i3exit lock", mode "default"
+    bindsym e exec --no-startup-id "$HOME/.scripts/i3exit exit", mode "default"
+    bindsym s exec --no-startup-id "$HOME/.scripts/i3exit suspend", mode "default"
+    bindsym h exec --no-startup-id "$HOME/.scripts/i3exit hibernate", mode "default"
+    bindsym r exec --no-startup-id "$HOME/.scripts/i3exit reboot", mode "default"
+    bindsym p exec --no-startup-id "$HOME/.scripts/i3exit poweroff", mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"

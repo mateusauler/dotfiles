@@ -1,0 +1,30 @@
+#!/bin/bash
+
+case "$1" in
+	lock)
+		i3lock --color "#222222"
+		;;
+	exit)
+		i3lock --color "#222222"
+		i3-msg exit
+		;;
+	suspend)
+		i3lock --color "#222222"
+		systemctl suspend
+		;;
+	hibernate)
+		i3lock --color "#222222"
+		systemctl hibernate
+		;;
+	reboot)
+		i3lock --color "#222222"
+		systemctl reboot
+		;;
+	poweroff)
+		i3lock --color "#222222"
+		systemctl poweroff
+		;;
+	*)
+		echo "Wrong usage"
+		exit 1
+esac
