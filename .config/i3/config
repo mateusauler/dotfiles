@@ -228,7 +228,7 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # Power menu
 
-set $power_menu System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (p) shutdown
+set $power_menu System (l)ock, (e)xit, (s)uspend, (h)ibernate, (r)eboot, (p)oweroff
 
 mode "$power_menu" {
     bindsym l exec --no-startup-id "$HOME/.scripts/i3exit lock", mode "default"
