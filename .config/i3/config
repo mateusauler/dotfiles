@@ -205,7 +205,7 @@ for_window [class="^.*"] border pixel 2
 exec_always xrdb -merge $HOME/.Xresources
 #exec sudo loadkeys br-abnt2
 
-bindsym $mod+Shift+x exec i3lock --color "#222222"
+bindsym $mod+x exec i3lock --color "#222222"
 
 bindsym $mod+b exec google-chrome-stable
 
