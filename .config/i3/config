@@ -202,6 +202,8 @@ for_window [class="^.*"] border pixel 1
 exec_always xrdb -merge $HOME/.Xresources
 #exec sudo loadkeys br-abnt2
 
+bindsym $mod+Shift+x exec i3lock
+
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
