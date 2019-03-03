@@ -200,7 +200,7 @@ mode "$mode_gaps" {
 
 gaps inner 15
 
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 2
 
 exec_always xrdb -merge $HOME/.Xresources
 #exec sudo loadkeys br-abnt2
