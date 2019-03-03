@@ -205,7 +205,9 @@ for_window [class="^.*"] border pixel 2
 exec_always xrdb -merge $HOME/.Xresources
 #exec sudo loadkeys br-abnt2
 
-bindsym $mod+Shift+x exec i3lock
+bindsym $mod+Shift+x exec i3lock --color "#222222"
+
+bindsym $mod+b exec google-chrome-stable
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
@@ -223,3 +225,23 @@ bindsym XF86TouchpadToggle exec $HOME/.scripts/touchpad.sh # toggle touchpad
 bindsym $mod+p exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+
+# Power menu
+
+set $power_menu System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (p) shutdown
+
+mode "$power_menu" {
+    bindsym l exec --no-startup-id i3lock --color "#222222", mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym s exec --no-startup-id systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym p exec --no-startup-id systemctl poweroff, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+Escape mode "$power_menu" 
+
