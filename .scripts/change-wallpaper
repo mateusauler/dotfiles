@@ -2,6 +2,8 @@
 
 cd $HOME/Pictures/wall
 
+rm ../wallpaper.*
+
 ls |sort -R |tail -1 |while read file; do
 	ext="${file##*.}"
 	cp $file $HOME/Pictures/wallpaper.$ext
