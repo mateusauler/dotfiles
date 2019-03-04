@@ -36,7 +36,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec rofi -theme sidebar -show run
+
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -140,6 +141,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 set $bg-color 	         #2f343f
+set $focused-color	 #634ab2
 set $inactive-bg-color   #2f343f
 set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
@@ -147,9 +149,9 @@ set $urgent-bg-color     #E53935
 
 # window colors
 #                       border              background         text                 indicator
-client.focused          $bg-color           $bg-color          $text-color          #8888ff
-client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color #8888ff
-client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color #8888ff
+client.focused          $focused-color      $focused-color     $text-color          #8888ff
+client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color $inactive-bg-color
+client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color $inactive-bg-color 
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #8888ff
 
 
@@ -268,3 +270,6 @@ mode "$power_menu" {
 
 bindsym $mod+Escape mode "$power_menu" 
 
+bindsym $mod+Shift+Return exec urxvt -e ranger
+
+exec_always compton -f
