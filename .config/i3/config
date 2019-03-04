@@ -279,3 +279,5 @@ bindsym $mod+i exec insync toggle
 
 exec compton -f
 exec insync start
+
+exec rmmod pcspkr
