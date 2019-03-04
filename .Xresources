@@ -1,7 +1,10 @@
-URxvt.font: xft:DejaVuSansMono:size=9
+URxvt.font: xft:DejaVuSansMono:size=10
 URxvt.letterSpace: -1
 
 URxvt.perl-ext-common:  resize-font
+
+URxvt.keysym.C-Down:  resize-font:smaller
+URxvt.keysym.C-Up:    resize-font:bigger
 
 URxvt.scrollStyle: rxvt
 URxvt.scrollBar:   false
