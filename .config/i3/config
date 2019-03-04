@@ -138,9 +138,20 @@ assign [class="Google-chrome"] $ws2
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-#bindsym $mod+Shift+e exit
+
+set $bg-color 	         #2f343f
+set $inactive-bg-color   #2f343f
+set $text-color          #f3f4f5
+set $inactive-text-color #676E7D
+set $urgent-bg-color     #E53935
+
+# window colors
+#                       border              background         text                 indicator
+client.focused          $bg-color           $bg-color          $text-color          #8888ff
+client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color #8888ff
+client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color #8888ff
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #8888ff
+
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -209,7 +220,7 @@ for_window [class="^.*"] border pixel 2
 exec_always xrdb -merge $HOME/.Xresources
 #exec sudo loadkeys br-abnt2
 
-bindsym $mod+x exec i3lock --color "#222222"
+bindsym $mod+x exec i3exit lock
 
 bindsym $mod+b exec google-chrome-stable
 
