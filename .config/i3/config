@@ -175,7 +175,7 @@ bar {
         status_command i3status
 }
 
-exec_always feh --bg-fill /home/mateus/Pictures/wallpaper.jpg
+exec_always feh --bg-fill $HOME/Pictures/wallpaper.jpg
 
 exec_always "setxkbmap -layout br"
 exec_always "setxkbmap -option 'grp:alt_shift_toggle'"
