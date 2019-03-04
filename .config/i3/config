@@ -200,8 +200,8 @@ bar {
 
 exec_always feh --bg-fill $HOME/Pictures/wallpaper.jpg
 
-exec "setxkbmap -layout us,br"
-exec "setxkbmap -option 'grp:alt_shift_toggle'"
+exec_always "setxkbmap -layout us,br"
+exec_always "setxkbmap -option 'grp:alt_shift_toggle'"
 
 # gaps
 set $mode_gaps Gaps
