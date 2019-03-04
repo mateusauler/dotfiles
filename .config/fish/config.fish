@@ -1,8 +1,6 @@
 set TERMINAL "rxvt-unicode"
 set BROWSER "google-chrome-stable"
 
-sudo loadkeys br-abnt2
-
 export LANG=C
 
 set scr_dir $HOME/.scripts
