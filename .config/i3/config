@@ -272,4 +272,4 @@ bindsym $mod+Escape mode "$power_menu"
 
 bindsym $mod+Shift+Return exec urxvt -e ranger
 
-exec_always compton -f
+exec compton -f
