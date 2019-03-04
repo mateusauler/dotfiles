@@ -1,7 +1,7 @@
 set TERMINAL "rxvt-unicode"
 set BROWSER "google-chrome-stable"
 
-sudo loadkeys br-abnt2
+#sudo loadkeys br-abnt2
 
 export LANG=C
 
