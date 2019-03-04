@@ -273,5 +273,8 @@ bindsym $mod+Escape mode "$power_menu"
 
 bindsym $mod+Shift+Return exec urxvt -e ranger
 
+for_window [class="insync.py"] floating enable
+bindsym $mod+i exec insync toggle
+
 exec compton -f
 exec insync start
