@@ -281,4 +281,6 @@ bindsym $mod+i exec insync toggle
 exec compton -f
 exec insync start
 
+exec nm-applet --no-startup-id
+
 exec rmmod pcspkr
