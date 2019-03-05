@@ -198,11 +198,11 @@ bar {
 	}
 }
 
-exec_always feh --bg-fill $HOME/Pictures/wallpaper.*
+exec_always --no-startup-id feh --bg-fill $HOME/Pictures/wallpaper.*
 bindsym $mod+m exec change-wallpaper 
 
-exec_always "setxkbmap -layout br"
-exec_always "setxkbmap -option 'grp:alt_shift_toggle'"
+exec_always --no-startup-id "setxkbmap -layout br"
+exec_always --no-startup-id "setxkbmap -option 'grp:alt_shift_toggle'"
 
 # gaps
 set $mode_gaps Gaps
@@ -230,7 +230,7 @@ gaps inner 15
 
 for_window [class="^.*"] border pixel 1
 
-exec_always xrdb -merge $HOME/.Xresources
+exec_always --no-startup-id xrdb -merge $HOME/.Xresources
 #exec sudo loadkeys br-abnt2
 
 bindsym $mod+x exec i3exit lock
@@ -278,9 +278,7 @@ bindsym $mod+Shift+Return exec urxvt -e ranger
 for_window [class="insync.py"] floating enable
 bindsym $mod+i exec insync toggle
 
-exec compton -f
-exec insync start
+exec --no-startup-id compton -f
+exec --no-startup-id insync start
 
-exec nm-applet --no-startup-id
-
-exec rmmod pcspkr
+exec --no-startup-id nm-applet 
