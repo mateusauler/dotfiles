@@ -199,7 +199,7 @@ bar {
 }
 
 exec_always --no-startup-id feh --bg-fill $HOME/Pictures/wallpaper.*
-bindsym $mod+m exec change-wallpaper 
+bindsym $mod+m exec --no-startup-id change-wallpaper 
 
 exec_always --no-startup-id "setxkbmap -layout br"
 exec_always --no-startup-id "setxkbmap -option 'grp:alt_shift_toggle'"
