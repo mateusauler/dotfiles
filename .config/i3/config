@@ -282,3 +282,5 @@ exec --no-startup-id compton -f
 exec --no-startup-id insync start
 
 exec --no-startup-id nm-applet 
+
+bindsym $mod+Mod1+Return exec urxvt -e htop
