@@ -235,7 +235,7 @@ exec_always --no-startup-id xrdb -merge $HOME/.Xresources
 
 bindsym $mod+x exec i3exit lock
 
-bindsym $mod+b exec google-chrome-stable
+bindsym $mod+b exec firefox
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume

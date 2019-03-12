@@ -1,5 +1,5 @@
 set TERMINAL "rxvt-unicode"
-set BROWSER "google-chrome-stable"
+set BROWSER "firefox"
 
 set scr_dir $HOME/.scripts
 
