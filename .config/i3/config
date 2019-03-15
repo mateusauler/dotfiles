@@ -209,15 +209,15 @@ set $mode_gaps Gaps
 bindsym $mod+g mode "$mode_gaps"
  
 mode "$mode_gaps" {
-        bindsym plus  gaps inner all plus 5
-        bindsym minus gaps inner all minus 5
-        bindsym 0     gaps inner all set 0
-        bindsym d     gaps inner all set 15 
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+        bindsym d     gaps inner current set 15 
 	
-	bindsym Shift+plus  gaps outer all plus 5
-        bindsym Shift+minus gaps outer all minus 5
-        bindsym Shift+0     gaps outer all set 0
-        bindsym Shift+d     gaps outer all set 0
+	bindsym Shift+plus  gaps outer current plus 5
+        bindsym Shift+minus gaps outer current minus 5
+        bindsym Shift+0     gaps outer current set 0
+        bindsym Shift+d     gaps outer current set 0
 
 
         bindsym Return mode "default"
@@ -276,6 +276,7 @@ bindsym $mod+Escape mode "$power_menu"
 bindsym $mod+Shift+Return exec urxvt -e ranger
 
 for_window [class="insync.py"] floating enable
+#for_window [class="VirtualBox Machine"] floating enable
 bindsym $mod+i exec insync toggle
 
 exec --no-startup-id compton -f
