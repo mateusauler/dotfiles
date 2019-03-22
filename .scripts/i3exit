@@ -5,23 +5,22 @@ case "$1" in
 		i3lock --color "#222222"
 		;;
 	exit)
-		i3lock --color "#222222"
 		i3-msg exit
 		;;
 	suspend)
-		i3lock --color "#222222"
+		i3exit lock
 		systemctl suspend
 		;;
 	hibernate)
-		i3lock --color "#222222"
+		i3exit lock
 		systemctl hibernate
 		;;
 	reboot)
-		i3lock --color "#222222"
+		i3exit exit
 		systemctl reboot
 		;;
 	poweroff)
-		i3lock --color "#222222"
+		i3exit exit
 		systemctl poweroff
 		;;
 	*)
