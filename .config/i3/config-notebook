@@ -1,0 +1,7 @@
+exec_always --no-startup-id "setxkbmap -layout br"
+
+# Touchpad controls
+bindsym XF86TouchpadToggle exec --no-startup-id $HOME/.scripts/touchpad.sh # toggle touchpad
+
+# Media player controls
+bindsym $mod+p exec --no-startup-id playerctl play-pause
