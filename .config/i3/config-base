@@ -139,7 +139,7 @@ for_window [class="Spotify"] move to workspace $ws10
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r exec --no-startup-id load-i3-config.sh, restart
+bindsym $mod+Shift+r exec --no-startup-id load-i3-config, restart
 
 set $bg-color 	         #2f343f
 set $focused-color	 	 #634ab2
