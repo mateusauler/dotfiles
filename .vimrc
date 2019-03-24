@@ -51,3 +51,4 @@ if has('syntax') && has('eval')
 endif
 
 set number
+set tabstop=4

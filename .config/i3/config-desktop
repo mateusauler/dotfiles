@@ -1,0 +1,17 @@
+bindsym $mod+Control+l move workspace to output right
+bindsym $mod+Control+h move workspace to output left
+
+bindsym $mod+Control+Right move workspace to output right
+bindsym $mod+Control+Left move workspace to output left
+
+# assign workspaces to screens
+workspace $ws10 output DVI-I-1
+
+# load monitor layout
+exec --no-startup-id sh ~/.screenlayout/default.sh
+
+exec_always --no-startup-id "setxkbmap -layout us,br"
+exec_always --no-startup-id "setxkbmap -option 'grp:alt_shift_toggle'"
+
+# Media player controls
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
