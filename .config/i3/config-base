@@ -139,7 +139,7 @@ for_window [class="Spotify"] move to workspace $ws10
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+r exec --no-startup-id load-i3-config.sh, restart
 
 set $bg-color 	         #2f343f
 set $focused-color	 #634ab2
@@ -198,11 +198,9 @@ bar {
 	}
 }
 
+
 exec_always --no-startup-id feh --bg-fill $HOME/Pictures/wallpaper.*
 bindsym $mod+m exec --no-startup-id change-wallpaper 
-
-exec_always --no-startup-id "setxkbmap -layout us,br"
-exec_always --no-startup-id "setxkbmap -option 'grp:alt_shift_toggle'"
 
 # gaps
 set $mode_gaps Gaps
@@ -231,7 +229,6 @@ gaps inner 15
 for_window [class="^.*"] border pixel 1
 
 exec_always --no-startup-id xrdb -merge $HOME/.Xresources
-#exec sudo loadkeys br-abnt2
 
 bindsym $mod+x exec i3exit lock
 
@@ -242,17 +239,9 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #i
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
-# Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
-
-# Touchpad controls
-bindsym XF86TouchpadToggle exec $HOME/.scripts/touchpad.sh # toggle touchpad
-
 # Media player controls
-bindsym $mod+p exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
 # Power menu
 
@@ -276,7 +265,7 @@ bindsym $mod+Escape mode "$power_menu"
 bindsym $mod+Shift+Return exec urxvt -e ranger
 
 for_window [class="insync.py"] floating enable
-bindsym $mod+i exec insync toggle
+bindsym $mod+i exec --no-startup-id insync toggle
 
 exec --no-startup-id compton -f
 exec --no-startup-id insync start
@@ -284,3 +273,8 @@ exec --no-startup-id insync start
 exec --no-startup-id nm-applet 
 
 bindsym $mod+Mod1+Return exec urxvt -e htop
+
+# redshift
+exec --no-startup-id redshift
+
+
