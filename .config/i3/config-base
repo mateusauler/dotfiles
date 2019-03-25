@@ -139,7 +139,7 @@ for_window [class="Spotify"] move to workspace $ws10
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r exec --no-startup-id load-i3-config, restart
+bindsym $mod+Shift+r exec --no-startup-id load-i3-config.sh, restart
 
 set $bg-color 	         #2f343f
 set $focused-color	 	 #634ab2
@@ -158,27 +158,27 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-	# These bindings trigger as soon as you enter the resize mode
+        # These bindings trigger as soon as you enter the resize mode
 
-	# Pressing left will shrink the window’s width.
-	# Pressing right will grow the window’s width.
-	# Pressing up will shrink the window’s height.
-	# Pressing down will grow the window’s height.
-	bindsym h resize shrink width 10 px or 10 ppt
-	bindsym j resize grow height 10 px or 10 ppt
-	bindsym k resize shrink height 10 px or 10 ppt
-	bindsym l resize grow width 10 px or 10 ppt
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
-	# same bindings, but for the arrow keys
-	bindsym Left resize shrink width 10 px or 10 ppt
-	bindsym Down resize grow height 10 px or 10 ppt
-	bindsym Up resize shrink height 10 px or 10 ppt
-	bindsym Right resize grow width 10 px or 10 ppt
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
 
-	# back to normal: Enter or Escape or $mod+r
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
-	bindsym $mod+r mode "default"
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
 }
 
 bindsym $mod+r mode "resize"
@@ -186,11 +186,11 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-	status_command i3blocks -c $HOME/.config/i3/i3blocks.conf
+        status_command i3blocks -c $HOME/.config/i3/i3blocks.conf
 	position top
 	colors {
 		background $bg-color
-	    separator #757575
+	    	separator #757575
 		#                  border             background         text
 		focused_workspace  $bg-color          $bg-color          $text-color
 		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
@@ -207,20 +207,21 @@ set $mode_gaps Gaps
 bindsym $mod+g mode "$mode_gaps"
  
 mode "$mode_gaps" {
-	bindsym plus  gaps inner current plus 5
-	bindsym minus gaps inner current minus 5
-	bindsym 0     gaps inner current set 0
-	bindsym d     gaps inner current set 15 
+        bindsym plus  gaps inner all plus 5
+        bindsym minus gaps inner all minus 5
+        bindsym 0     gaps inner all set 0
+        bindsym d     gaps inner all set 15 
 	
-	bindsym Shift+plus  gaps outer current plus 5
-	bindsym Shift+minus gaps outer current minus 5
-	bindsym Shift+0     gaps outer current set 0
-	bindsym Shift+d     gaps outer current set 0
+	bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+        bindsym Shift+d     gaps outer all set 0
 
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
-	bindsym $mod+g mode "default"
-	bindsym g mode "default"
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+g mode "default"
+        bindsym g mode "default"
 }
 
 gaps inner 15
@@ -266,7 +267,7 @@ bindsym $mod+Shift+Return exec urxvt -e ranger
 for_window [class="insync.py"] floating enable
 bindsym $mod+i exec --no-startup-id insync toggle
 
-exec --no-startup-id compton -f
+exec --no-startup-id compton --config $HOME/.config/compton/compton.conf -f
 exec --no-startup-id insync start
 
 exec --no-startup-id nm-applet 
