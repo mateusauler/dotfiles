@@ -5,7 +5,7 @@ bindsym $mod+Control+Right move workspace to output right
 bindsym $mod+Control+Left move workspace to output left
 
 # assign workspaces to screens
-workspace $ws10 output DVI-I-1
+workspace $ws10 output DP-3
 
 # load monitor layout
 exec --no-startup-id sh ~/.screenlayout/default.sh
