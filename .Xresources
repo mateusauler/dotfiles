@@ -1,4 +1,4 @@
-URxvt.font: xft:DejaVuSansMono:size=10
+URxvt.font: xft:DejaVuSansMono:size=14
 URxvt.letterSpace: -1
 
 URxvt.perl-ext-common:  resize-font
