@@ -164,10 +164,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 1 px or 1 ppt
+        bindsym j resize grow height 1 px or 1 ppt
+        bindsym k resize shrink height 1 px or 1 ppt
+        bindsym l resize grow width 1 px or 1 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -207,13 +207,13 @@ set $mode_gaps Gaps
 bindsym $mod+g mode "$mode_gaps"
  
 mode "$mode_gaps" {
-        bindsym plus  gaps inner all plus 5
-        bindsym minus gaps inner all minus 5
+        bindsym plus  gaps inner all plus 1
+        bindsym minus gaps inner all minus 1
         bindsym 0     gaps inner all set 0
         bindsym d     gaps inner all set 15 
 	
-	bindsym Shift+plus  gaps outer all plus 5
-        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+plus  gaps outer all plus 1
+        bindsym Shift+minus gaps outer all minus 1
         bindsym Shift+0     gaps outer all set 0
         bindsym Shift+d     gaps outer all set 0
 
