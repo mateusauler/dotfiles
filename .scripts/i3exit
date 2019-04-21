@@ -9,10 +9,12 @@ case "$1" in
 		;;
 	suspend)
 		i3exit lock
+		sleep 1
 		systemctl suspend
 		;;
 	hibernate)
 		i3exit lock
+		sleep 1
 		systemctl hibernate
 		;;
 	reboot)
