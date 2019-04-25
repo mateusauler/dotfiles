@@ -277,4 +277,7 @@ bindsym $mod+Mod1+Return exec urxvt -e htop
 # redshift
 exec --no-startup-id redshift
 
+bindsym Print exec scr.sh root 
+bindsym Control+Print exec scr.sh
+
 # End of config-base
