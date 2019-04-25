@@ -3,12 +3,13 @@
 name=$(date '+%Y-%m-%d %H-%M-%S')
 scr_dir="$HOME/Pictures/screenshots"
 format="png"
+full_name="$scr_dir/$name.$format"
 
 if [ "$#" = 0 ]; then
-	import "$scr_dir/$name.$format"
+	import "$full_name"
 
 elif [ "$#" = 1 ]; then
-	import -window $1 "$scr_dir/$name.$format"
+	import -window "$1" "$full_name"
 fi
 
-sxiv "$scr_dir/$name.$format"
+sxiv "$full_name"
