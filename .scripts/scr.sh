@@ -1,6 +1,6 @@
 #!/bin/bash
 
-name=$(date '+%Y-%m-%d %H-%M-%S')
+name=$(date '+%Y-%m-%d_%H-%M-%S')
 scr_dir="$HOME/Pictures/screenshots"
 format="png"
 full_name="$scr_dir/$name.$format"
