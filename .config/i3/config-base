@@ -279,5 +279,6 @@ exec --no-startup-id redshift
 
 bindsym --release Print exec scr.sh root 
 bindsym --release Control+Print exec scr.sh
+bindsym --release Shift+Print exec scr.sh $(i3-msg -t get_tree | jq 'recurse(.nodes[]) | select(.focused).window')
 
 # End of config-base
