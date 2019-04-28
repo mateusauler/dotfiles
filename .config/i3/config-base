@@ -281,4 +281,6 @@ bindsym --release Print exec scr.sh root
 bindsym --release Control+Print exec scr.sh
 bindsym --release Shift+Print exec scr.sh $(i3-msg -t get_tree | jq 'recurse(.nodes[]) | select(.focused).window')
 
+bindsym --release $mod+z exec --no-startup-id toggle_lang
+
 # End of config-base
