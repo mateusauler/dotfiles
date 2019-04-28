@@ -1,8 +1,12 @@
 bindsym $mod+Control+l move workspace to output right
 bindsym $mod+Control+h move workspace to output left
+bindsym $mod+Control+k move workspace to output up
+bindsym $mod+Control+j move workspace to output down
 
 bindsym $mod+Control+Right move workspace to output right
 bindsym $mod+Control+Left move workspace to output left
+bindsym $mod+Control+Up move workspace to output up
+bindsym $mod+Control+Down move workspace to output down
 
 # assign workspaces to screens
 workspace $ws10 output DP-3
@@ -16,4 +20,4 @@ exec_always --no-startup-id "setxkbmap -option 'grp:alt_shift_toggle'"
 # Media player controls
 bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 
-exec --no-startup-id i3-msg restart
+exec --no-startup-id delay 1; i3-msg restart
