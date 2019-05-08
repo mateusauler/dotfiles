@@ -248,12 +248,12 @@ bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 set $power_menu System (l)ock, (e)xit, (s)uspend, (h)ibernate, (r)eboot, (p)oweroff
 
 mode "$power_menu" {
-    bindsym l exec --no-startup-id "$HOME/.scripts/i3exit lock", mode "default"
-    bindsym e exec --no-startup-id "$HOME/.scripts/i3exit exit", mode "default"
-    bindsym s exec --no-startup-id "$HOME/.scripts/i3exit suspend", mode "default"
-    bindsym h exec --no-startup-id "$HOME/.scripts/i3exit hibernate", mode "default"
-    bindsym r exec --no-startup-id "$HOME/.scripts/i3exit reboot", mode "default"
-    bindsym p exec --no-startup-id "$HOME/.scripts/i3exit poweroff", mode "default"
+    bindsym l exec --no-startup-id "i3exit lock", mode "default"
+    bindsym e exec --no-startup-id "i3exit exit", mode "default"
+    bindsym s exec --no-startup-id "i3exit suspend", mode "default"
+    bindsym h exec --no-startup-id "i3exit hibernate", mode "default"
+    bindsym r exec --no-startup-id "i3exit reboot", mode "default"
+    bindsym p exec --no-startup-id "i3exit poweroff", mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -277,9 +277,9 @@ bindsym $mod+Mod1+Return exec urxvt -e htop
 # redshift
 exec --no-startup-id redshift
 
-bindsym --release Print exec scr.sh root 
-bindsym --release Control+Print exec scr.sh
-bindsym --release Shift+Print exec scr.sh $(i3-msg -t get_tree | jq 'recurse(.nodes[]) | select(.focused).window')
+bindsym --release Print exec scr root 
+bindsym --release Control+Print exec scr
+bindsym --release Shift+Print exec scr $(i3-msg -t get_tree | jq 'recurse(.nodes[]) | select(.focused).window')
 
 bindsym --release $mod+z exec --no-startup-id toggle_lang
 
