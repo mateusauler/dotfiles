@@ -134,12 +134,13 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 
 # assign windows to workspaces
 assign [class="Firefox"] $ws2
+assign [class="firefoxdeveloperedition"] $ws2
 for_window [class="Spotify"] move to workspace $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r exec --no-startup-id load-i3-conf, restart
+bindsym $mod+Shift+r exec --no-startup-id load-i3-config
 
 set $bg-color 	         #2f343f
 set $focused-color	 	 #634ab2
