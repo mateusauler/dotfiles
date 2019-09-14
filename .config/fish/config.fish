@@ -1,9 +1,9 @@
 set TERMINAL "rxvt-unicode"
 set BROWSER "firefox"
 
-set scr_dir $HOME/.scripts
+set short_dir $HOME/.shortcuts
 
-echo $PATH | grep $scr_dir > /dev/null || set PATH "$PATH:$scr_dir/cmds"
+echo $PATH | grep $short_dir > /dev/null || set PATH "$PATH:$short_dir"
 
 alias g='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
