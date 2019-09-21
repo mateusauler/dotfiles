@@ -265,8 +265,8 @@ bindsym $mod+Escape mode "$power_menu"
 
 bindsym $mod+Shift+Return exec urxvt -e ranger
 
-for_window [class="insync.py"] floating enable
-bindsym $mod+i exec --no-startup-id insync toggle
+for_window [class="Insync"] floating enable
+bindsym $mod+i exec --no-startup-id insync
 
 exec --no-startup-id compton --config $HOME/.config/compton/compton.conf -f
 exec --no-startup-id insync start
