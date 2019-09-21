@@ -1,6 +1,8 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR __fish_init_2_3_0:\x1d
+SETUVAR _fish_abbr_o:popd
+SETUVAR _fish_abbr_p:pushd
 SETUVAR _fish_abbr_po:popd
 SETUVAR _fish_abbr_pu:pushd
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
