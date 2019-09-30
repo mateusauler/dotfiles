@@ -266,10 +266,10 @@ bindsym $mod+Escape mode "$power_menu"
 bindsym $mod+Shift+Return exec urxvt -e ranger
 
 for_window [class="Insync"] floating enable
-bindsym $mod+i exec --no-startup-id insync
+#bindsym $mod+i exec --no-startup-id insync
 
 exec --no-startup-id compton --config $HOME/.config/compton/compton.conf -f
-exec --no-startup-id insync start
+exec --no-startup-id pcloud
 
 exec --no-startup-id nm-applet 
 
