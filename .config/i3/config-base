@@ -284,4 +284,6 @@ bindsym --release Shift+Print exec scr $(i3-msg -t get_tree | jq 'recurse(.nodes
 
 bindsym --release $mod+z exec --no-startup-id toggle_lang
 
+exec_always --no-startup-id toggle_lang us
+
 # End of config-base
