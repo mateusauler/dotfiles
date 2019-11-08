@@ -14,7 +14,6 @@ workspace $ws10 output DP-3
 # load monitor layout
 exec --no-startup-id sh ~/.screenlayout/default.sh
 
-exec_always --no-startup-id "setxkbmap -layout us,br"
 exec_always --no-startup-id "setxkbmap -option 'grp:alt_shift_toggle'"
 
 # Media player controls
