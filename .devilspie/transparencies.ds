@@ -1,6 +1,6 @@
 ( if
 ( matches ( window_class ) "code-oss|keepassxc|Spotify|discord|TelegramDesktop" )
 ( begin
-( spawn_async (str "xprop -id " (window_xid) " -f _NET_WM_WINDOW_OPACITY 32c -set _NET_WM_WINDOW_OPACITY 0xdfffffff") )
+( spawn_async (str "xprop -id " (window_xid) " -f _NET_WM_WINDOW_OPACITY 32c -set _NET_WM_WINDOW_OPACITY 0xde000000") )
 )
 )
