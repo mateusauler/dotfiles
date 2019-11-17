@@ -293,8 +293,8 @@ exec_always --no-startup-id feh --bg-fill $HOME/Pictures/wallpaper.*
 # reload X config
 exec_always --no-startup-id xrdb -merge $HOME/.Xresources
 
-# compton
-exec --no-startup-id compton --config $HOME/.config/compton/compton.conf -f
+# picom
+exec --no-startup-id picom --config $HOME/.config/picom/picom.conf -f
 
 # devilspie
 exec --no-startup-id devilspie
