@@ -281,6 +281,13 @@ bindsym --release $mod+z exec --no-startup-id toggle_lang
 bindsym $mod+m exec --no-startup-id change-wallpaper 
 
 ############################################################################
+#                         Set floating windows                             #
+############################################################################
+
+# Origin fix
+for_window [instance="origin.exe"] floating enable
+
+############################################################################
 #                         Execute Applications                             #
 ############################################################################
 
@@ -302,8 +309,8 @@ exec --no-startup-id devilspie
 # redshift
 exec --no-startup-id redshift
 
-# pCloud
-exec --no-startup-id pcloud
+# MEGA
+exec --no-startup-id megasync
 
 # networkmanager applet
 exec --no-startup-id nm-applet 
