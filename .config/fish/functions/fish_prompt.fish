@@ -32,9 +32,9 @@ function fish_prompt --description 'Write out the prompt'
 				   (set_color normal) 
 
 		if test -d .git ; or git rev-parse --git-dir > /dev/null 2> /dev/null
-			echo -n -s (set_color $color_bg_pwd) (set_color -b $color_bg_git) ' '
-			echo -n -s (set_color $color_fg_git) ' ' (git branch | grep \\\* | cut -d' ' -f2) ' ' (set_color normal)
-			echo -n -s (set_color $color_bg_git) '' (set_color normal)
+			echo -n -s (set_color $color_bg_pwd) (set_color -b $color_bg_git) ' ' \
+					   (set_color $color_fg_git) ' ' (git branch --show-current) ' ' (set_color normal) \
+					   (set_color $color_bg_git) '' (set_color normal)
 		else
 			echo -n -s (set_color $color_bg_pwd) '' (set_color normal)
 		end
