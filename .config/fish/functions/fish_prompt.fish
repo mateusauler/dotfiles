@@ -24,7 +24,7 @@ function fish_prompt --description 'Write out the prompt'
 	set -l color_fg_git $color_fg_pwd
 
 	if tty | grep '/dev/tty' > /dev/null
-		echo -n -s $USER ' ' (set_color $color_cwd) (prompt_pwd) (set_color normal) $suffix ' '
+		echo -n -s $USER ' ' (set_color $color_cwd) (prompt_pwd) (set_color normal) ' ' $suffix ' '
 	else
 	    echo -n -s (set_color -b $color_bg_usr) " $USER " \
 				   (set_color -b $color_bg_pwd) (set_color $color_bg_usr) ' ' \
