@@ -2,7 +2,7 @@
 set $mod Mod4
 
 # Font
-font pango:DejaVu Sans 8
+font pango:Ubuntu Nerd Font 9
 
 ############################################################################
 #                          Basic Shortcuts                                 #
