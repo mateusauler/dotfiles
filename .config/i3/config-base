@@ -292,7 +292,7 @@ for_window [instance="origin.exe"] floating enable
 ############################################################################
 
 # window border
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 3
 
 # set wallpaper
 exec_always --no-startup-id feh --bg-fill $HOME/Pictures/wallpaper.*
