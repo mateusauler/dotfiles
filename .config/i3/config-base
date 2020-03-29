@@ -81,13 +81,13 @@ bindsym $mod+a focus parent
 
 set $ws1 "1 "
 set $ws2 "2 "
-set $ws3 "3 "
-set $ws4 "4 "
-set $ws5 "5 "
-set $ws6 "6 "
-set $ws7 "7 "
-set $ws8 "8 "
-set $ws9 "9 "
+set $ws3 "3 类"
+set $ws4 "4 类"
+set $ws5 "5 类"
+set $ws6 "6 类"
+set $ws7 "7 类"
+set $ws8 "8 类"
+set $ws9 "9 类"
 set $ws10 "10 "
 
 # switch to workspace
@@ -293,9 +293,6 @@ for_window [instance="origin.exe"] floating enable
 
 # window border
 for_window [class="^.*"] border pixel 3
-
-# set wallpaper
-exec_always --no-startup-id feh --bg-fill $HOME/Pictures/wallpaper.*
 
 # reload X config
 exec_always --no-startup-id xrdb -merge $HOME/.Xresources
