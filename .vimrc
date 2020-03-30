@@ -36,8 +36,6 @@ endif
 augroup vimrcEx
   au!
 
-  " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
 augroup END
 
 " Add optional packages.
@@ -53,3 +51,6 @@ endif
 set number
 set relativenumber
 set tabstop=4
+
+map <C-c> "+y
+map <C-p> "+P
