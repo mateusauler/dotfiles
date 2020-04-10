@@ -1,5 +1,5 @@
 set TERMINAL "rxvt-unicode"
-set BROWSER "firefox"
+set BROWSER "firefox-developer-edition"
 
 set fish_greeting
 
@@ -15,6 +15,8 @@ abbr --add p pushd
 abbr --add o popd
 
 alias hexdump="hexdump -C"
+
+fish_vi_key_bindings
 
 if [ (tty) = "/dev/tty1" ];
 	pgrep i3 || startx

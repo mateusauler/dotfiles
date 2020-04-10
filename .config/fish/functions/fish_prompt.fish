@@ -24,14 +24,14 @@ function fish_prompt --description 'Write out the prompt'
 	set -l color_fg_git $color_fg_pwd
 
 	if tty | grep '/dev/tty' > /dev/null
-		echo -n -s $USER ' ' (set_color $color_cwd) (prompt_pwd) (set_color normal) ' ' $suffix ' '
+		echo -n -s $USER ' ' (set_color $color_cwd) (prompt_pwd) (set_color normal)  ' ' $suffix ' '
 	else
 	    echo -n -s (set_color -b $color_bg_usr) " $USER " \
 				   (set_color -b $color_bg_pwd) (set_color $color_bg_usr) ' ' \
 				   (set_color normal) (set_color -b $color_bg_pwd) (set_color $color_fg_pwd) (prompt_pwd) ' ' \
 				   (set_color normal) 
 
-		if test -d .git ; or git rev-parse --git-dir > /dev/null 2> /dev/null
+		if test -d .git | git rev-parse --git-dir > /dev/null 2> /dev/null
 			echo -n -s (set_color $color_bg_pwd) (set_color -b $color_bg_git) ' ' \
 					   (set_color $color_fg_git) ' ' (git branch --show-current) ' ' (set_color normal) \
 					   (set_color $color_bg_git) '' (set_color normal)
