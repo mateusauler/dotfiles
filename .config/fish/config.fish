@@ -16,6 +16,8 @@ abbr --add o popd
 
 alias hexdump="hexdump -C"
 
+alias la="ls -lAh"
+
 fish_vi_key_bindings
 
 if [ (tty) = "/dev/tty1" ];
