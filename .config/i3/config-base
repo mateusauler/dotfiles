@@ -2,7 +2,7 @@
 set $mod Mod4
 
 # Font
-font pango:Ubuntu Nerd Font 9
+font pango:DeJavu Sans Nerd Font 9
 
 ############################################################################
 #                          Basic Shortcuts                                 #
@@ -79,16 +79,16 @@ bindsym $mod+a focus parent
 #                              Workspaces                                  #
 ############################################################################
 
-set $ws1 "1 "
-set $ws2 "2 "
-set $ws3 "3 类"
-set $ws4 "4 类"
-set $ws5 "5 类"
-set $ws6 "6 类"
-set $ws7 "7 类"
-set $ws8 "8 类"
-set $ws9 "9 类"
-set $ws10 "10 "
+set $ws1 "1 <span font='Ubuntu Nerd Font'></span>"
+set $ws2 "2 <span font='Ubuntu Nerd Font'></span>"
+set $ws3 "3 <span font='Ubuntu Nerd Font'>类</span>"
+set $ws4 "4 <span font='Ubuntu Nerd Font'>类</span>"
+set $ws5 "5 <span font='Ubuntu Nerd Font'>类</span>"
+set $ws6 "6 <span font='Ubuntu Nerd Font'>类</span>"
+set $ws7 "7 <span font='Ubuntu Nerd Font'>类</span>"
+set $ws8 "8 <span font='Ubuntu Nerd Font'>类</span>"
+set $ws9 "9 <span font='Ubuntu Nerd Font'>类</span>"
+set $ws10 "10 <span font='Ubuntu Nerd Font'></span>"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -238,7 +238,6 @@ mode "$mode_gaps" {
         bindsym Shift+0     gaps outer all set 0
         bindsym Shift+d     gaps outer all set 0
 
-
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym $mod+g mode "default"
@@ -246,6 +245,9 @@ mode "$mode_gaps" {
 }
 
 gaps inner 15
+
+smart_gaps on
+smart_borders on
 
 ############################################################################
 #                            Shortcuts                                     #
@@ -260,14 +262,15 @@ bindsym XF86AudioMute        exec --no-startup-id pactl set-sink-mute 0 toggle #
 bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
-# urxvt
-bindsym $mod+Mod1+Return exec urxvt -e htop
+# htop
+bindsym $mod+Mod1+Return exec i3-sensible-terminal -e htop
 
-# firefox
-bindsym $mod+b exec firefox-developer-edition
+# browser
+bindsym $mod+b exec $BROWSER
+bindsym $mod+shift+b exec $BROWSER --private-window
 
 # ranger
-bindsym $mod+Shift+Return exec urxvt -e ranger
+bindsym $mod+Shift+Return exec i3-sensible-terminal -e ranger
 
 # screenshot
 bindsym --release Print exec scr root 
@@ -300,9 +303,6 @@ exec_always --no-startup-id xrdb -merge $HOME/.Xresources
 # picom
 exec --no-startup-id picom --config $HOME/.config/picom/picom.conf -f
 
-# devilspie
-exec --no-startup-id devilspie
-
 # redshift
 exec --no-startup-id redshift
 
@@ -313,3 +313,4 @@ exec --no-startup-id megasync
 exec --no-startup-id nm-applet 
 
 # End of config-base
+
