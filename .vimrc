@@ -52,5 +52,8 @@ set number
 set relativenumber
 set tabstop=4
 
+set ttymouse=sgr
+
 map <C-c> "+y
 map <C-p> "+P
+
