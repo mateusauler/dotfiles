@@ -135,9 +135,11 @@ for_window [class="Spotify"] move to workspace $ws10
 #                             Colours                                      #
 ############################################################################
 
-set $bg-color 	         #2f343f
+#set $bg-color 	         #2f343f
+set $bg-color 	         #1d1f23
 set $focused-color	 	 #634ab2
-set $inactive-bg-color   #2f343f
+#set $inactive-bg-color  #2f343f
+set $inactive-bg-color   #1d1f23
 set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
 set $urgent-bg-color     #E53935
