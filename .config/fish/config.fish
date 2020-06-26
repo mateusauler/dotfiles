@@ -1,4 +1,5 @@
-export TERMINAL="alacritty"
+export TERM="rxvt-unicode-256color"
+export TERMINAL=$TERM
 export BROWSER="firefox-developer-edition"
 
 set fish_greeting
