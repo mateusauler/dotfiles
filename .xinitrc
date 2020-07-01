@@ -1,9 +1,19 @@
+cd
+
 numlockx &
 
-feh --bg-fill $HOME/Pictures/wallpaper.*
+xrdb -merge ~/.Xresources 
 
-setxkbmap -option "caps:swapescape"
+feh --bg-fill $HOME/Pictures/wallpaper.* 
 
-xset r rate 300 50;
+setxkbmap -option "caps:swapescape" 
 
-exec i3
+xset r rate 400 50
+
+sh $HOME/.local/share/autostart/autostart.sh &
+
+while xsetroot -name "`date +\"%a %d/%m %H:%M:%S\"`"
+do
+	sleep 1
+done &
+exec $WM
