@@ -27,11 +27,6 @@ else
   endif
 endif
 
-if &t_Co > 2 || has("gui_running")
-  " Switch on highlighting the last used search pattern.
-  set hlsearch
-endif
-
 " Put these in an autocmd group, so that we can delete them easily.
 augroup vimrcEx
   au!
@@ -57,3 +52,8 @@ set ttymouse=sgr
 map <C-c> "+y
 map <C-p> "+P
 
+" Move between splits
+nmap <silent> <c-k> :wincmd k<CR>
+nmap <silent> <c-j> :wincmd j<CR>
+nmap <silent> <c-h> :wincmd h<CR>
+nmap <silent> <c-l> :wincmd l<CR>
