@@ -1,6 +1,12 @@
 export TERM="rxvt-unicode-256color"
 export TERMINAL=$TERM
+
+export EDITOR="vim"
+
 export BROWSER="firefox-developer-edition"
+export BROWSER_PRIV="$BROWSER --private-window"
+
+export WM="dwm"
 
 set fish_greeting
 
@@ -19,7 +25,7 @@ alias la="ls -lAh"
 
 fish_vi_key_bindings
 
-if test (tty) = "/dev/tty1" && ! pgrep i3;
+if test (tty) = "/dev/tty1" && ! pgrep $WM;
 	test -f $HOME/.scripts/mount_devices.sh && $HOME/.scripts/mount_devices.sh &
 	lsmod | grep pcspkr > /dev/null && sudo rmmod pcspkr &
 	startx
