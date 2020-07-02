@@ -32,7 +32,9 @@ abbr --add o popd
 
 alias hexdump="hexdump -C"
 
-alias la="ls -lAh"
+alias ls="exa -GF --group-directories-first"
+alias la="exa -laGF --group-directories-first"
+alias ll="exa -lGF --group-directories-first"
 
 fish_vi_key_bindings
 
