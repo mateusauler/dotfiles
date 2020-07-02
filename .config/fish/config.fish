@@ -26,6 +26,7 @@ abbr --add gl "git pull"
 abbr --add ga "git add"
 abbr --add gc "git commit -m"
 abbr --add gh "git checkout"
+abbr --add gd "git diff"
 
 abbr --add p pushd
 abbr --add o popd
