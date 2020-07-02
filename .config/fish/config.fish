@@ -14,7 +14,18 @@ set -l short_dir $HOME/.shortcuts
 
 echo $PATH | grep $short_dir > /dev/null || set PATH "$PATH:$short_dir"
 
-alias g='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias g=git
+alias gua="git remote | xargs -L1 git push"
+alias gsu="git remote | xargs -L1 -I {} git push -u {} (git branch --show-current)"
+alias cfg="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
+alias cua="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME remote | xargs -L1 /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME push"
+
+abbr --add gs "git status"
+abbr --add gu "git push"
+abbr --add gl "git pull"
+abbr --add ga "git add"
+abbr --add gc "git commit -m"
+abbr --add gh "git checkout"
 
 abbr --add p pushd
 abbr --add o popd
