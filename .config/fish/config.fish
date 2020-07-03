@@ -20,6 +20,8 @@ alias gsu="git remote | xargs -L1 -I {} git push -u {} (git branch --show-curren
 alias cfg="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 alias cua="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME remote | xargs -L1 /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME push --all"
 
+alias cleanup-after-bad-patch="rm *.{rej, orig}"
+
 abbr --add gs "git status"
 abbr --add gu "git push"
 abbr --add gl "git pull"
@@ -27,6 +29,8 @@ abbr --add ga "git add"
 abbr --add gc "git commit -m"
 abbr --add gh "git checkout"
 abbr --add gd "git diff"
+
+abbr --add pa "patch --merge -p1 <"
 
 abbr --add p pushd
 abbr --add o popd
