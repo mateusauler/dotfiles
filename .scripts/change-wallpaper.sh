@@ -1,12 +1,12 @@
 #!/bin/bash
 
-cd $XDG_PICTURES_DIR/wall
+cd $HOME/pics/wall
 
 rm ../wallpaper.*
 
-ls |sort -R |tail -1 |while read file; do
+ls | shuf -n 100 | sxiv -oiqt | head -n 1 | while read file; do
 	ext="${file##*.}"
-	cp $file $HOME/Pictures/wallpaper.$ext
-	feh --bg-fill $HOME/Pictures/wallpaper.$ext
+	cp $file $HOME/pics/wallpaper.$ext
+	feh --bg-fill $HOME/pics/wallpaper.$ext
 done
 
