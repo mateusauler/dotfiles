@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd $HOME/Pictures/wall
+cd $XDG_PICTURES_DIR/wall
 
 ls | while read file; do
 	ext="${file##*.}"
