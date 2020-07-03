@@ -30,7 +30,7 @@ abbr --add gc "git commit -m"
 abbr --add gh "git checkout"
 abbr --add gd "git diff"
 
-abbr --add pa "patch --merge -p1 <"
+abbr --add pa "patch -p1 <"
 
 abbr --add p pushd
 abbr --add o popd
