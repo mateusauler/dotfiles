@@ -17,8 +17,7 @@ echo $PATH | grep $short_dir > /dev/null || set PATH "$PATH:$short_dir"
 alias g=git
 alias gua="git remote | xargs -L1 git push --all"
 alias gsu="git remote | xargs -L1 -I {} git push -u {} (git branch --show-current)"
-alias cfg="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
-alias cua="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME remote | xargs -L1 /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME push --all"
+alias cua="c remote | xargs -L1 c push --all"
 
 alias cleanup-after-bad-patch="rm *.{rej, orig}"
 
@@ -29,6 +28,14 @@ abbr --add ga "git add"
 abbr --add gc "git commit -m"
 abbr --add gh "git checkout"
 abbr --add gd "git diff"
+
+abbr --add cs "c status"
+abbr --add cu "c push"
+abbr --add cl "c pull"
+abbr --add ca "c add"
+abbr --add cc "c commit -m"
+abbr --add ch "c checkout"
+abbr --add cd "c diff"
 
 abbr --add pa "patch -p1 <"
 
