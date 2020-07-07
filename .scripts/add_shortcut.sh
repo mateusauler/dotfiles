@@ -7,7 +7,7 @@ if [ "$#" = 2 ]; then
 		echo "Shortcut already exists."
 	else
 		if [ -f $1 ]; then
-			ln -sf $1 $scr_dir/$2
+			ln -sf "$(realpath $1)" "$scr_dir/$2"
 			echo "Shortcut created."
 		else
 			echo "$1 is not a file."
