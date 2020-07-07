@@ -1,9 +1,9 @@
 function man --description "Wrapper for the 'man' command"
 
-	if count $argv > /dev/null
-		/bin/man $argv[1] | $EDITOR - 
+	if test (count $argv) -eq 1
+		/bin/man $argv[1] | $EDITOR -R -
 	else
-		/bin/man
+		/bin/man $argv
 	end
 
 end
