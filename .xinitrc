@@ -2,15 +2,15 @@ cd
 
 numlockx &
 
-xrdb -merge ~/.Xresources 
+sh $HOME/.local/share/autostart/autostart.sh &
 
-feh --bg-fill $HOME/Pictures/wallpaper.* 
+xrdb ~/.Xresources 
 
-setxkbmap -option "caps:swapescape" 
+feh --bg-fill $HOME/pics/wallpaper.*
+
+setxkbmap -option "caps:swapescape"
 
 xset r rate 400 50
-
-sh $HOME/.local/share/autostart/autostart.sh &
 
 while xsetroot -name "`date +\"%a %d/%m %H:%M:%S\"`"
 do
