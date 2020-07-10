@@ -1,4 +1,4 @@
-export TERM="st"
+export TERM="st-256color"
 export TERMINAL=$TERM
 
 export EDITOR="vim"
