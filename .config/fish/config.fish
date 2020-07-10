@@ -1,4 +1,4 @@
-export TERM="rxvt-unicode-256color"
+export TERM="st"
 export TERMINAL=$TERM
 
 export EDITOR="vim"
@@ -35,7 +35,6 @@ abbr --add cl "c pull"
 abbr --add ca "c add"
 abbr --add cc "c commit -m"
 abbr --add ch "c checkout"
-abbr --add cd "c diff"
 
 abbr --add pa "patch -p1 <"
 
@@ -44,7 +43,7 @@ abbr --add o popd
 
 alias hexdump="hexdump -C"
 
-alias ls="exa -GF --group-directories-first"
+alias ls="exa --group-directories-first"
 alias la="exa -laGF --group-directories-first"
 alias ll="exa -lGF --group-directories-first"
 
