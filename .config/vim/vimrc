@@ -1,0 +1,70 @@
+" Cleanup ~/
+set undodir=$XDG_DATA_HOME/vim/undo
+set directory=$XDG_DATA_HOME/vim/swap
+set backupdir=$XDG_DATA_HOME/vim/backup
+set viewdir=$XDG_DATA_HOME/vim/view
+set viminfo+='1000,n$XDG_DATA_HOME/vim/viminfo
+set runtimepath=$XDG_CONFIG_HOME/vim,$VIMRUNTIME,$XDG_CONFIG_HOME/vim/after
+
+" Powerline stuff
+set rtp+=/usr/lib/python3.8/site-packages/powerline/bindings/vim 
+let g:powerline_pycmd="py3"
+set laststatus=2
+
+" Defaults
+syntax on
+
+set nu
+set relativenumber
+set tabstop=4 softtabstop=4
+set noerrorbells
+set smartindent
+set nowrap
+set smartcase
+set noswapfile
+set nobackup
+set undofile
+set incsearch
+
+" Plugins
+call plug#begin('$XDG_DATA_HOME/vim/plugged')
+
+Plug 'jremmen/vim-ripgrep'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-utils/vim-man'
+Plug 'git@github.com:Valloric/YouCompleteMe.git'
+Plug 'mbbill/undotree'
+
+call plug#end()
+
+set background=dark
+
+if executable('rg')
+	let g:rg_derive_root = 'true'
+endif
+
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+let mapleader = " "
+let g:netrw_browse_split = 2
+let g:netrw_banner = 0
+let g:netrw_winsize = 25
+
+let g:ctrlp_use_caching = 0
+
+" Remaps
+nnoremap <silent> <C-c> "+y
+nnoremap <silent> <S-p> "+P
+
+nnoremap <silent> <c-k> :wincmd k<CR>
+nnoremap <silent> <c-j> :wincmd j<CR>
+nnoremap <silent> <c-h> :wincmd h<CR>
+nnoremap <silent> <c-l> :wincmd l<CR>
+
+nnoremap <silent> <leader>u :UndotreeShow <bar> :wincmd h <bar> :wincmd k <bar> :vertical resize 60<CR>
+nnoremap <silent> <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 50<CR>
+
+nnoremap <silent> <leader>+ :vertical resize +5<CR>
+nnoremap <silent> <leader>- :vertical resize -5<CR>
+
+nnoremap <silent> <leader>gd :YcmCompleter GoTo<CR>
+nnoremap <silent> <leader>gf :YcmCompleter FixIt<CR>
