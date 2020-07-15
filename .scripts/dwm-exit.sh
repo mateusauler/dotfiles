@@ -1,6 +1,13 @@
 #!/bin/sh
 
-case $(printf "lock\nexit\nsuspend\nhibernate\nreboot\npoweroff" | dmenu -n -c -l 6 -h 32 -fn "monospace:12") in
+if [ $# -eq 1 ]
+then
+	op=$1
+else
+	op=$(printf "lock\nexit\nsuspend\nhibernate\nreboot\npoweroff" | dmenu -n -c -l 6 -h 32 -fn "monospace:12")
+fi
+
+case $op in
 	lock)
 		slock
 		;;
