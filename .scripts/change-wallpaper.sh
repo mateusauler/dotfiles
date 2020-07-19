@@ -1,12 +1,14 @@
-#!/bin/bash
+#!/bin/sh
+
+dest=$HOME/pics/wallpaper
 
 cd $HOME/pics/wall
 
-rm ../wallpaper.*
+test [ -f $dest ] | rm $dest
 
-ls | shuf -n 100 | sxiv -oiqt | head -n 1 | while read file; do
-	ext="${file##*.}"
-	cp $file $HOME/pics/wallpaper.$ext
-	feh --bg-fill $HOME/pics/wallpaper.$ext
-done
+file=$(ls | shuf | sxiv -oiqt | head -n 1)
+
+ln $file $dest
+feh --bg-fill $dest
+
 
