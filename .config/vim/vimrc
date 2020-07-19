@@ -21,8 +21,8 @@ set noerrorbells
 set smartindent
 set nowrap
 set smartcase
-"set noswapfile
-"set nobackup
+set noswapfile
+set nobackup
 set undofile
 set incsearch
 
