@@ -1,4 +1,4 @@
-!URxvt.font: xft:Droid Sans Mono Nerd Font:size=12,xft:Inconsolata Nerd Font Mono:size=12
+URxvt.font: xft:Droid Sans Mono Nerd Font:size=12,xft:Inconsolata Nerd Font Mono:size=12
 URxvt.letterSpace: -1
 
 URxvt.perl-ext-common:  resize-font
