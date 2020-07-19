@@ -56,10 +56,10 @@ echo $PATH | grep $short_dir > /dev/null || set PATH "$PATH:$short_dir"
 # aliases & abbreviations
 
 alias g		git
-alias gua	"git remote | xargs -L1 git push --all"
-alias gsu	"git remote | xargs -L1 -I {} git push -u {} (git branch --show-current)"
+alias gua	"git remote | sed 's/^blacklist-.*//' | xargs -L1 git push --all"
+alias gsu	"git remote | sed 's/^blacklist-.*//' | xargs -L1 -I {} git push -u {} (git branch --show-current)"
 alias c		"/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
-alias cua	"c remote | xargs -L1 c push --all"
+alias cua	"c remote | sed 's/^blacklist-.*//' | xargs -L1 c push --all"
 
 alias cleanup-after-bad-patch="rm *.{rej, orig}"
 
