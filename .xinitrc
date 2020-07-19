@@ -6,7 +6,7 @@ sh $HOME/.local/share/autostart/autostart.sh &
 
 xrdb -load $XDG_CONFIG_HOME/X11/Xresources 
 
-feh --bg-fill $HOME/pics/wallpaper.*
+feh --bg-fill $HOME/pics/wallpaper
 
 setxkbmap -option "caps:swapescape"
 
