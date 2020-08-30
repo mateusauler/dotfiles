@@ -10,6 +10,9 @@ set -x BROWSER_PRIV "$BROWSER --private-window"
 
 set -x WM dwm
 
+# fix android studio
+set -x _JAVA_AWT_WM_NONREPARENTING 1
+
 # XDG variables
 
 set -x XDG_CONFIG_HOME	$HOME/.config
