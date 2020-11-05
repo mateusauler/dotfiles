@@ -5,8 +5,8 @@ set -x TERMINAL	$TERM
 
 set -x EDITOR vim
 
-set -x BROWSER		firefox-developer-edition
-set -x BROWSER_PRIV "$BROWSER --private-window"
+set -x BROWSER		browser
+set -x BROWSER_PRIV "browser -p"
 
 set -x WM dwm
 
