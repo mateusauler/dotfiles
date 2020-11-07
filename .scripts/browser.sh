@@ -29,7 +29,7 @@ add_arg_start(){
 }
 
 for a in $args; do
-	echo "$a" | grep -e "youtube.com/watch" > /dev/null && run_cmd="$yt_cmd"
+	echo "$a" | grep -e "youtube.com/watch|youtu.be" > /dev/null && run_cmd="$yt_cmd"
 
 	case $a in
 		-p|-P)
