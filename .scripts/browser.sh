@@ -44,5 +44,5 @@ if [ $private -eq 1 ] ; then
 	set_priv
 fi
 
-printf "$run_cmd $run_args"
+printf "$run_cmd $run_args\n"
 $($run_cmd $run_args > /dev/null) &
