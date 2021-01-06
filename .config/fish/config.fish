@@ -1,7 +1,8 @@
 # environment
 
-set -x TERM		st-256color
-set -x TERMINAL	$TERM
+set -x TERM		 st-256color
+set -x TERMINAL	 $TERM
+set -x COLORTERM $TERM
 
 set -x EDITOR vim
 
@@ -88,7 +89,7 @@ abbr --add ch "c checkout"
 abbr --add pa "patch -p1 <"
 
 abbr --add p "sudo pacman -S"
-alias upm "sudo reflector --verbose -p https,rsync -c \"Brazil,Chile,Paraguay,Colombia,Ecuador,United States,Worldwide\" -f 24 --completion-percent 100 --save /etc/pacman.d/mirrorlist"
+alias upm "sudo reflector --verbose -p http,https,rsync -c \"Brazil,Chile,Paraguay,Colombia,Ecuador,United States,Worldwide\" -f 24 --completion-percent 100 --save /etc/pacman.d/mirrorlist"
 
 alias hexdump "hexdump -C"
 
