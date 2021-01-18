@@ -1,6 +1,6 @@
 #!/bin/bash
 
-browser_cmd="firefox-developer-edition --new-tab"
+browser_cmd="librewolf --new-tab"
 yt_cmd="mpv"
 
 run_cmd="$browser_cmd"
