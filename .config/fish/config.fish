@@ -69,7 +69,9 @@ alias gsu	"git remote | sed 's/^blacklist-.*//' | xargs -L1 -I {} git branch -u 
 alias c		"/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 alias cua	"c remote | sed 's/^blacklist-.*//' | xargs -L1 c push --all"
 
-alias cleanup-after-bad-patch="rm *.{rej, orig}"
+alias cleanup-after-bad-patch "rm *.{rej, orig}"
+
+alias cat bat
 
 abbr --add gs "git status"
 abbr --add gu "git push"
