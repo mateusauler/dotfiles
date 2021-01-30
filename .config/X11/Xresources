@@ -1,4 +1,4 @@
-#include "Xresources.d/urxvt.Xresources"
+#include "urxvt.Xresources"
 
 *.font: Droid Sans Mono Nerd Font:size=12
 
