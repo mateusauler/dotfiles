@@ -1,5 +1,5 @@
 #include "Xresources.d/urxvt.Xresources"
-#include "Xresources.d/base16-dracula-256.Xresources"
 
 *.font: Droid Sans Mono Nerd Font:size=12
 
+#include "Xresources.d/iterm-Dracula.Xresources"
