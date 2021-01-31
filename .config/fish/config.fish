@@ -90,7 +90,7 @@ abbr --add ch "c checkout"
 
 abbr --add pa "patch -p1 <"
 
-abbr --add p "sudo pacman -S"
+abbr --add p "paru"
 alias upm "sudo reflector --verbose -p http,https,rsync -c \"Brazil,Chile,Paraguay,Colombia,Ecuador,United States,Worldwide\" -f 24 --completion-percent 100 --save /etc/pacman.d/mirrorlist"
 
 alias hexdump "hexdump -C"
