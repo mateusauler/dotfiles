@@ -14,6 +14,14 @@ set laststatus=2
 " Defaults
 syntax on
 
+if has('mouse')
+	if &term =~'xterm'
+		set mouse=a
+	else
+		set mouse=nvi
+	endif
+endif
+
 set nu
 set relativenumber
 set tabstop=4 softtabstop=4
