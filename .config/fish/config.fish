@@ -34,18 +34,22 @@ set -x XDG_VIDEOS_DIR		$HOME/vids
 
 # cleanup ~/
 
-set -x XAUTHORITY			$XDG_RUNTIME_DIR/Xauthority
-set -x GTK2_RC_FILES		$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0
-set -x LESSHISTFILE			-
-set -x WGETRC				$XDG_CONFIG_HOME/wget/wgetrc
-set -x GNUPGHOME			$XDG_DATA_HOME/gnupg
-set -x WINEPREFIX			$XDG_DATA_HOME/wineprefixes/default
-set -x GOPATH				$XDG_DATA_HOME/go
-set -x RXVT_SOCKET  		$XDG_RUNTIME_DIR/urxvtd
-set -x SQLITE_HISTORY		$XDG_DATA_HOME/sqlite_history
-set -x VIMINIT				'source $XDG_CONFIG_HOME/vim/vimrc'
-set -x CCACHE_CONFIGPATH	$XDG_CONFIG_HOME/ccache.config
-set -x CCACHE_DIR			$XDG_CACHE_HOME/ccache 
+set -x XAUTHORITY				$XDG_RUNTIME_DIR/Xauthority
+set -x GTK2_RC_FILES			$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0
+set -x LESSHISTFILE				-
+set -x WGETRC					$XDG_CONFIG_HOME/wget/wgetrc
+set -x GNUPGHOME				$XDG_DATA_HOME/gnupg
+set -x WINEPREFIX				$XDG_DATA_HOME/wineprefixes/default
+set -x GOPATH					$XDG_DATA_HOME/go
+set -x RXVT_SOCKET  			$XDG_RUNTIME_DIR/urxvtd
+set -x SQLITE_HISTORY			$XDG_DATA_HOME/sqlite_history
+set -x VIMINIT					'source $XDG_CONFIG_HOME/vim/vimrc'
+set -x CCACHE_CONFIGPATH		$XDG_CONFIG_HOME/ccache.config
+set -x CCACHE_DIR				$XDG_CACHE_HOME/ccache
+set -x ANDROID_PREFS_ROOT		$XDG_CONFIG_HOME/android
+set -x ADB_KEYS_PATH			$ANDROID_PREFS_ROOT
+set -x ANDROID_EMULATOR_HOME	$XDG_DATA_HOME/android/emulator
+set -x _JAVA_OPTIONS			-Djava.util.prefs.userRoot=$XDG_CONFIG_HOME/java
 
 alias nvidia-settings	"nvidia-settings --config=$XDG_CONFIG_HOME/nvidia/settings"
 alias wget				"wget --hsts-file $XDG_CACHE_HOME/wget-hsts"
