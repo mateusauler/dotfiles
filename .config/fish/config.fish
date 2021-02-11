@@ -58,8 +58,8 @@ set fish_greeting
 set -l short_dir $HOME/.shortcuts
 set -l ccache_bin_dir /usr/lib/ccache/bin/
 
-echo $PATH | grep $short_dir > /dev/null || set PATH "$PATH:$short_dir"
 echo $PATH | grep $ccache_bin_dir > /dev/null || set PATH "$ccache_bin_dir:$PATH"
+echo $PATH | grep $short_dir > /dev/null || set PATH "$short_dir:$PATH"
 
 # aliases & abbreviations
 
