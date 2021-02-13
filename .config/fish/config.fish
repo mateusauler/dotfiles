@@ -50,6 +50,8 @@ set -x ANDROID_PREFS_ROOT		$XDG_CONFIG_HOME/android
 set -x ADB_KEYS_PATH			$ANDROID_PREFS_ROOT
 set -x ANDROID_EMULATOR_HOME	$XDG_DATA_HOME/android/emulator
 set -x _JAVA_OPTIONS			-Djava.util.prefs.userRoot=$XDG_CONFIG_HOME/java
+set -x NPM_CONFIG_USERCONFIG    $XDG_CONFIG_HOME/npm/npmrc
+set -x NVM_DIR                  $XDG_DATA_HOME/nvm
 
 alias nvidia-settings	"nvidia-settings --config=$XDG_CONFIG_HOME/nvidia/settings"
 alias wget				"wget --hsts-file $XDG_CACHE_HOME/wget-hsts"
@@ -95,6 +97,7 @@ abbr --add ch "c checkout"
 abbr --add pa "patch -p1 <"
 
 abbr --add p "paru"
+
 alias upm "sudo reflector --verbose -p http,https,rsync -c \"Brazil,Chile,Paraguay,Colombia,Ecuador,United States,Worldwide\" -f 24 --completion-percent 100 --save /etc/pacman.d/mirrorlist"
 
 alias hexdump "hexdump -C"
