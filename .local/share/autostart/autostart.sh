@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pgrep urxvtd > /dev/null || urxvtd &
-picom --config $HOME/.config/picom/picom.conf -f &
+picom --experimental-backends --config $HOME/.config/picom/picom.conf &
 redshift &
 nm-applet &
 megasync &
