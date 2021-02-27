@@ -7,7 +7,7 @@ set viminfo+='1000,n$XDG_DATA_HOME/vim/viminfo
 set runtimepath=$XDG_CONFIG_HOME/vim,$VIMRUNTIME,$XDG_CONFIG_HOME/vim/after
 
 " Powerline stuff
-set rtp+=/usr/lib/python3.8/site-packages/powerline/bindings/vim 
+set rtp+=/usr/lib/python3.9/site-packages/powerline/bindings/vim 
 let g:powerline_pycmd="py3"
 set laststatus=2
 
