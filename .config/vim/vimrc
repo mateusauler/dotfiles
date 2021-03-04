@@ -24,7 +24,7 @@ endif
 
 set nu
 set relativenumber
-set tabstop=4 softtabstop=4
+set tabstop=4 softtabstop=4 shiftwidth=4
 set noerrorbells
 set smartindent
 set nowrap
