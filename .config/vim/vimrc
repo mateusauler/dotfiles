@@ -26,6 +26,7 @@ set nu
 set relativenumber
 set tabstop=4 softtabstop=4 shiftwidth=4
 set noerrorbells
+set autoindent
 set smartindent
 set nowrap
 set smartcase
