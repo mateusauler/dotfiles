@@ -93,8 +93,9 @@ abbr --add cu  "c push"
 abbr --add cl  "c pull"
 abbr --add ca  "c add"
 abbr --add cap "c add -p"
-abbr --add cc  "c commit"
+abbr --add cco "c commit"
 abbr --add ch  "c checkout"
+abbr --add cdi "c diff"
 
 abbr --add pa "patch -p1 <"
 
