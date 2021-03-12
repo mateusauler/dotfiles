@@ -34,6 +34,7 @@ set noswapfile
 set nobackup
 set undofile
 set incsearch
+set lazyredraw
 
 " Plugins
 call plug#begin('$XDG_DATA_HOME/vim/plugged')
