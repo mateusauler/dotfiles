@@ -5,3 +5,4 @@ picom --experimental-backends --config $HOME/.config/picom/picom.conf &
 redshift &
 nm-applet &
 megasync &
+unclutter --timeout 3 --ignore-scrolling &
