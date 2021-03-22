@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 browser_cmd="librewolf --new-tab"
 yt_cmd="mpv"
@@ -13,18 +13,18 @@ private=0
 set_priv() {
 	case $run_cmd in
 		$browser_cmd)
-			add_arg_start "--private-window"
+			append_arg_start "--private-window"
 			;;
 		*)
 			;;
 	esac
 }
 
-add_arg(){
+append_arg(){
 	run_args="$run_args $1"
 }
 
-add_arg_start(){
+append_arg_start(){
 	run_args="$1 $run_args"
 }
 
@@ -36,7 +36,7 @@ for a in $args; do
 			private=1	
 			;;
 		*)
-			add_arg $a
+			append_arg $a
 	esac
 done
 
@@ -45,4 +45,4 @@ if [ $private -eq 1 ] ; then
 fi
 
 printf "%b" "$run_cmd $run_args\n"
-$($run_cmd $run_args > /dev/null) &
+exec $run_cmd $run_args > /dev/null &
