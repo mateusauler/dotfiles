@@ -77,8 +77,6 @@ alias cua	"c remote | sed 's/^blacklist-.*//' | xargs -L1 c push --all"
 
 alias cleanup-after-bad-patch "rm *.{rej, orig}"
 
-alias cat bat
-
 abbr --add gs  "git status"
 abbr --add gu  "git push"
 abbr --add gl  "git pull"
