@@ -106,8 +106,8 @@ alias upm "sudo reflector --verbose -p https,http -c \"Brazil,Chile,Paraguay,Col
 alias hexdump "hexdump -C"
 
 alias ls="exa --group-directories-first"
-alias la="exa -laGF --group-directories-first"
-alias ll="exa -lGF --group-directories-first"
+alias la="exa -laF --group-directories-first"
+alias ll="exa -lF --group-directories-first"
 
 fish_vi_key_bindings
 
