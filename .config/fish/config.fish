@@ -6,6 +6,8 @@ set -x COLORTERM $TERM
 
 set -x EDITOR vim
 
+set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
+
 set -x BROWSER		browser
 set -x BROWSER_PRIV "browser -p"
 
