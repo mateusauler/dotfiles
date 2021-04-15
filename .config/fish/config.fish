@@ -71,13 +71,14 @@ echo $PATH | grep $short_dir > /dev/null || set PATH "$short_dir:$PATH"
 
 # aliases & abbreviations
 
-alias g		git
 alias gua	"git remote | sed 's/^blacklist-.*//' | xargs -L1 git push --all"
 alias gsu	"git remote | sed 's/^blacklist-.*//' | xargs -L1 -I {} git branch -u {}/(git branch --show-current) (git branch --show-current)"
 alias c		"/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 alias cua	"c remote | sed 's/^blacklist-.*//' | xargs -L1 c push --all"
 
 alias cleanup-after-bad-patch "rm *.{rej, orig}"
+
+abbr --add g   "git"
 
 abbr --add gs  "git status"
 abbr --add gu  "git push"
