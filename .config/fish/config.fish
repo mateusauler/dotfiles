@@ -89,6 +89,7 @@ abbr --add gc  "git commit"
 abbr --add gca "git commit --amend"
 abbr --add gh  "git checkout"
 abbr --add gd  "git diff"
+abbr --add gdc "git diff --cached"
 
 abbr --add cs  "c status"
 abbr --add cu  "c push"
@@ -99,6 +100,7 @@ abbr --add cco "c commit"
 abbr --add cca "c commit --amend"
 abbr --add ch  "c checkout"
 abbr --add cdi "c diff"
+abbr --add cdc "c diff --cached"
 
 abbr --add pa "patch -p1 <"
 
