@@ -10,6 +10,7 @@ set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
 set -x BROWSER		browser
 set -x BROWSER_PRIV "browser -p"
+set -x BROWSER_PROF "browser --ProfileManager"
 
 set -x WM dwm
 
