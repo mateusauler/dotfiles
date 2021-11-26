@@ -1,6 +1,7 @@
 #!/bin/sh
 
-picom --experimental-backends --config $HOME/.config/picom/picom.conf &
+toggle_lang br &
+picom --config $HOME/.config/picom/picom.conf &
 redshift &
 megasync &
 flameshot &

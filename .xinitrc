@@ -1,14 +1,10 @@
 cd
 
-numlockx &
-
 sh $HOME/.local/share/autostart/autostart.sh &
 
 xrdb -load $XDG_CONFIG_HOME/X11/Xresources 
 
 feh --bg-fill $HOME/pics/wallpaper
-
-setxkbmap -option "caps:swapescape"
 
 xmodmap -e "keycode 135 = Super_L" # reassign Menu to Super_L so it works as the modkey
 
