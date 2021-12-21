@@ -64,7 +64,7 @@ alias sqlite3			"sqlite3 -init $XDG_CONFIG_HOME/sqlite3/sqliterc"
 
 set fish_greeting
 
-set -l short_dir $HOME/.shortcuts
+set -l short_dir $HOME/.local/bin
 set -l ccache_bin_dir /usr/lib/ccache/bin/
 
 echo $PATH | grep $ccache_bin_dir > /dev/null || set PATH "$ccache_bin_dir:$PATH"
@@ -121,7 +121,7 @@ fish_vi_key_bindings
 
 # startx if in tty1
 
-if test (tty) = "/dev/tty1" && [ -z "$DISPLAY" ];
+if [ -z "$DISPLAY" ] && test (tty) = "/dev/tty1";
 	test -f $HOME/.scripts/mount_devices.sh && $HOME/.scripts/mount_devices.sh &
 	lsmod | grep pcspkr > /dev/null && sudo rmmod pcspkr &
 	exec startx

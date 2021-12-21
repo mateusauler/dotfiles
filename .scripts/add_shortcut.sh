@@ -1,16 +1,16 @@
 #!/bin/sh
 
-scr_dir=$HOME/.shortcuts
+bin_dir=$HOME/.local/bin
 
 if [ "$#" = 2 ]; then
-	if [ -e "$scr_dir/$2" ]; then
+	if [ -e "$bin_dir/$2" ]; then
 		if [ "$1" = "-r" ]; then 
-			rm $scr_dir/$2
+			rm $bin_dir/$2
 		else
 			echo "Shortcut already exists."
 		fi
 	elif [ -f $1 ]; then
-		ln -sf "$(realpath $1)" "$scr_dir/$2"
+		ln -sf "$(realpath $1)" "$bin_dir/$2"
 		echo "Shortcut created."
 	else
 		if [ "$1" = "-r" ]; then 
