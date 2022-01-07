@@ -124,5 +124,5 @@ fish_vi_key_bindings
 if [ -z "$DISPLAY" ] && test (tty) = "/dev/tty1";
 	test -f $HOME/.scripts/mount_devices.sh && $HOME/.scripts/mount_devices.sh &
 	lsmod | grep pcspkr > /dev/null && sudo rmmod pcspkr &
-	exec startx
+	startx
 end
