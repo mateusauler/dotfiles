@@ -39,6 +39,7 @@ set -x XDG_VIDEOS_DIR		$HOME/vids
 # cleanup ~/
 
 set -x XAUTHORITY				$XDG_RUNTIME_DIR/Xauthority
+set -x XINITRC					$XDG_CONFIG_HOME/X11/xinitrc
 set -x GTK2_RC_FILES			$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0
 set -x LESSHISTFILE				-
 set -x WGETRC					$XDG_CONFIG_HOME/wget/wgetrc
@@ -125,5 +126,6 @@ fish_vi_key_bindings
 if [ -z "$DISPLAY" ] && test (tty) = "/dev/tty1";
 	test -f $HOME/.scripts/mount_devices.sh && $HOME/.scripts/mount_devices.sh &
 	lsmod | grep pcspkr > /dev/null && sudo rmmod pcspkr &
-	startx
+#	startx "$XINITRC"
+	sx
 end

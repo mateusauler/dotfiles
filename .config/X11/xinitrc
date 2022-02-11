@@ -16,4 +16,5 @@ while xsetroot -name " `amixer get Master | awk -F 'Left:|[][]' 'BEGIN {RS=""
 do
 	sleep 1
 done &
+trap 'kill 0' EXIT
 exec $WM
