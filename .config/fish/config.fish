@@ -109,6 +109,8 @@ abbr --add pa "patch -p1 <"
 
 abbr --add p "paru"
 
+abbr --add z "zathura"
+
 alias upm "sudo reflector --verbose -p https,http -c \"Brazil,Chile,Paraguay,Colombia,Ecuador,United States,Worldwide\" -f 24 -a 168 --save /etc/pacman.d/mirrorlist"
 
 alias hexdump "hexdump -C"
