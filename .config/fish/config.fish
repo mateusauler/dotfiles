@@ -108,8 +108,9 @@ abbr --add cdc "c diff --cached"
 abbr --add pa "patch -p1 <"
 
 abbr --add p "paru"
-
 abbr --add z "zathura"
+
+abbr --add nsxiv "nsxiv -a"
 
 alias upm "sudo reflector --verbose -p https,http -c \"Brazil,Chile,Paraguay,Colombia,Ecuador,United States,Worldwide\" -f 24 -a 168 --save /etc/pacman.d/mirrorlist"
 
