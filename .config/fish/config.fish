@@ -132,3 +132,5 @@ if [ -z "$DISPLAY" ] && test (tty) = "/dev/tty1";
 #	startx "$XINITRC"
 	sx
 end
+
+tty | grep -E "^/dev/pts" &> /dev/null && type -q pfetch && pfetch
