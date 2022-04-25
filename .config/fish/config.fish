@@ -5,7 +5,7 @@ set -x TERMINAL	 $TERM
 set -x COLORTERM $TERM
 
 set -x VISUAL vim
-set -x EDITOR "vi -e"
+set -x EDITOR vim
 
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
