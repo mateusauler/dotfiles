@@ -10,22 +10,32 @@ function fish_nim_prompt
 	set -l retc $color_err
 	test $status = 0; and set retc $color_ok
 
-	set -q __fish_git_prompt_showupstream
-		or set -g __fish_git_prompt_showupstream auto
+	if ! set -q __fish_git_prompt_showupstream
+		set -g __fish_git_prompt_showupstream auto
+	end
 
 	# Are we in a tty ?
 	function _is_tty
 		tty | grep '/dev/tty' &> /dev/null
 	end
 
+	# Brackets
+	set -l obracket ❬
+	set -l cbracket ❭
+
+	if _is_tty
+		set obracket '<'
+		set cbracket '>'
+	end
+
 	# Wraps a given text in [...]
-	function _prompt_wrapper -Sa color label value
+	function _prompt_wrapper -Sa value color label
 		if test -z "$value"
 			return
 		end
 
 		set_color -o $color_bg
-		echo -n '❬ '
+		echo -n "$obracket "
 		set_color normal
 		test -z $color; or set_color $color
 		if ! _is_tty; and test -n "$label"
@@ -33,7 +43,7 @@ function fish_nim_prompt
 		end
 		echo -n $value
 		set_color -o $color_bg
-		echo -n ' ❭'
+		echo -n " $cbracket"
 		set_color normal
 		echo -n ' '
 	end
@@ -69,29 +79,26 @@ function fish_nim_prompt
 	set info "$info"(set_color -o $color_bg)
 
 	# Wrap the info
-	_prompt_wrapper '' '' "$info"
+	_prompt_wrapper $info
 
 	# Virtual Environment
 	if ! set -q VIRTUAL_ENV_DISABLE_PROMPT
 		set -g VIRTUAL_ENV_DISABLE_PROMPT true
 	end
 
-	if set -q VIRTUAL_ENV
-		_prompt_wrapper $color_py  (basename "$VIRTUAL_ENV")
-	end
+	_prompt_wrapper (basename "$VIRTUAL_ENV") $color_py 
 
 	# git
 	set -l prompt_git (fish_git_prompt '%s')
-	if test -n "$prompt_git"
-		_prompt_wrapper $color_git  $prompt_git
-	end
+	_prompt_wrapper "$prompt_git" $color_git 
 
 	# Battery status
 	type -q acpi
 	and test (acpi -a 2> /dev/null | string match -r off)
-	and _prompt_wrapper $retc B (acpi -b | cut -d' ' -f 4-)
+	and _prompt_wrapper (acpi -b | cut -d' ' -f 4-) $retc B
 
 	# Vi-mode
+	# Won't display the mode prompt if it's in its default state (insert)
 	if test "$fish_key_bindings" = fish_vi_key_bindings; or test "$fish_key_bindings" = fish_hybrid_key_bindings
 		set -l mode
 		set -l color
@@ -100,8 +107,6 @@ function fish_nim_prompt
 			case default
 				set color red
 				set mode N
-			case insert
-				set mode I
 			case replace_one
 				set color green
 				set mode R1
@@ -113,10 +118,7 @@ function fish_nim_prompt
 				set mode V
 		end
 
-		# Don't display the mode prompt if it's in its default state (insert)
-		if test $mode != 'I'
-			_prompt_wrapper $color '' $mode
-		end
+		_prompt_wrapper $mode $color
 	end
 
 	# New line
@@ -134,13 +136,12 @@ function fish_nim_prompt
 		echo $job
 	end
 
-	# End of the prompt
+	# Last line of of the prompt
+	set -l last_line ╰╼
+	_is_tty; and set last_line '$'
+
 	set_color normal
 	set_color $retc
-	if ! _is_tty
-		echo -n '╰╼ '
-	else
-		echo -n '$ '
-	end
+	echo -n "$last_line "
 	set_color normal
 end
