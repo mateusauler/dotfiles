@@ -1,9 +1,9 @@
 function fish_nim_prompt
-	# Colors to be used (Taken from random dracula-based themes)
-	set -g color_bg  "#BD93F9"
-	set -g color_ok  "#1276A8"
+	# Colors to be used
+	set -g color_bg blue
+	set -g color_ok magenta
 	set -g color_err red
-	set -g color_git "#50FA7B"
+	set -g color_git green
 	set -g color_py  "#FFD745" # One of the Python logo colors
 
 	# Sets the return-code-based color
@@ -13,24 +13,36 @@ function fish_nim_prompt
 	set -q __fish_git_prompt_showupstream
 		or set -g __fish_git_prompt_showupstream auto
 
+	# Are we in a tty ?
+	function is_tty
+		tty | grep '/dev/tty' &> /dev/null
+	end
+
 	# Wraps a given text in [...]
 	function _nim_prompt_wrapper
 		set -l color $argv[1]
-		set -l value $argv[2]
+		set -l label $argv[2]
+		set -l value $argv[3]
 
-		echo -n ' '
 		set_color -o $color_bg
 		echo -n '['
 		set_color normal
 		test -z $color; or set_color $color
+		if ! is_tty; and test -n "$label"
+			echo -n "$label "
+		end
 		echo -n $value
 		set_color -o $color_bg
 		echo -n ']'
+		set_color normal
+		echo -n ' '
 	end
 
 	# Beginning of the first line
-	set_color $retc
-	echo -n '╭╼'
+	if ! is_tty
+		set_color $retc
+		echo -n '╭╼ '
+	end
 
 	# Building 'user@host pwd'
 	set -l info
@@ -57,7 +69,7 @@ function fish_nim_prompt
 	set info "$info"(set_color -o $color_bg)
 
 	# Wrap the info
-	_nim_prompt_wrapper '' "$info"
+	_nim_prompt_wrapper '' '' "$info"
 
 	# Vi-mode
 	if test "$fish_key_bindings" = fish_vi_key_bindings; or test "$fish_key_bindings" = fish_hybrid_key_bindings
@@ -83,7 +95,7 @@ function fish_nim_prompt
 
 		# Don't display the mode prompt if it's in its default state (insert)
 		if test $mode != 'I'
-			_nim_prompt_wrapper $color $mode
+			_nim_prompt_wrapper $color '' $mode
 		end
 	end
 
@@ -93,13 +105,13 @@ function fish_nim_prompt
 	end
 
 	if set -q VIRTUAL_ENV
-		_nim_prompt_wrapper $color_py ' '(basename "$VIRTUAL_ENV")
+		_nim_prompt_wrapper $color_py  (basename "$VIRTUAL_ENV")
 	end
 
 	# git
 	set -l prompt_git (fish_git_prompt '%s')
 	if test -n "$prompt_git"
-		_nim_prompt_wrapper $color_git " $prompt_git"
+		_nim_prompt_wrapper $color_git  $prompt_git
 	end
 
 	# Battery status
@@ -114,8 +126,10 @@ function fish_nim_prompt
 	set_color normal
 
 	for job in (jobs)
-		set_color $retc
-		echo -n '│ '
+		if ! is_tty
+			set_color $retc
+			echo -n '│ '
+		end
 		set_color $color_bg
 		echo $job
 	end
@@ -123,7 +137,11 @@ function fish_nim_prompt
 	# End of the prompt
 	set_color normal
 	set_color $retc
-	echo -n '╰╼ '
+	if ! is_tty
+		echo -n '╰╼ '
+	else
+		echo -n '$ '
+	end
 	set_color normal
 
 	# Clean up color variables
