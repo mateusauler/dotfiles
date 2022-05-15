@@ -11,6 +11,4 @@ if [ ! -z $file ]; then
 	ln $file $dest
 fi
 
-feh --bg-fill $dest
-
-
+feh --no-fehbg --bg-fill $dest
