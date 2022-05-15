@@ -14,7 +14,7 @@ function fish_nim_prompt
 		or set -g __fish_git_prompt_showupstream auto
 
 	# Are we in a tty ?
-	function is_tty
+	function _is_tty
 		tty | grep '/dev/tty' &> /dev/null
 	end
 
@@ -25,21 +25,21 @@ function fish_nim_prompt
 		end
 
 		set_color -o $color_bg
-		echo -n '['
+		echo -n '❬ '
 		set_color normal
 		test -z $color; or set_color $color
-		if ! is_tty; and test -n "$label"
+		if ! _is_tty; and test -n "$label"
 			echo -n "$label "
 		end
 		echo -n $value
 		set_color -o $color_bg
-		echo -n ']'
+		echo -n ' ❭'
 		set_color normal
 		echo -n ' '
 	end
 
 	# Beginning of the first line
-	if ! is_tty
+	if ! _is_tty
 		set_color $retc
 		echo -n '╭╼ '
 	end
@@ -126,7 +126,7 @@ function fish_nim_prompt
 	set_color normal
 
 	for job in (jobs)
-		if ! is_tty
+		if ! _is_tty
 			set_color $retc
 			echo -n '│ '
 		end
@@ -137,7 +137,7 @@ function fish_nim_prompt
 	# End of the prompt
 	set_color normal
 	set_color $retc
-	if ! is_tty
+	if ! _is_tty
 		echo -n '╰╼ '
 	else
 		echo -n '$ '
