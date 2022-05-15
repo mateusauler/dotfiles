@@ -1,7 +1,4 @@
 function fish_powerline_prompt --description 'Powerline-style prompt'
-	function fish_mode_prompt
-    end
-
 	set -l color_cwd $fish_color_cwd
 	set -l suffix
 	switch "$USER"
