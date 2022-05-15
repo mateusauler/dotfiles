@@ -1,10 +1,10 @@
 function fish_nim_prompt
 	# Colors to be used
-	set -g color_bg blue
-	set -g color_ok magenta
-	set -g color_err red
-	set -g color_git green
-	set -g color_py  "#FFD745" # One of the Python logo colors
+	set -l color_bg  blue
+	set -l color_ok  magenta
+	set -l color_err red
+	set -l color_git green
+	set -l color_py  "#FFD745" # One of the Python logo colors
 
 	# Sets the return-code-based color
 	set -l retc $color_err
@@ -19,10 +19,10 @@ function fish_nim_prompt
 	end
 
 	# Wraps a given text in [...]
-	function _nim_prompt_wrapper
-		set -l color $argv[1]
-		set -l label $argv[2]
-		set -l value $argv[3]
+	function _prompt_wrapper -Sa color label value
+		if test -z "$value"
+			return
+		end
 
 		set_color -o $color_bg
 		echo -n '['
@@ -44,7 +44,7 @@ function fish_nim_prompt
 		echo -n '╭╼ '
 	end
 
-	# Building 'user@host pwd'
+	# Building 'user@host cwd'
 	set -l info
 
 	# Only append 'user@host' if in an ssh session
@@ -63,13 +63,33 @@ function fish_nim_prompt
 		set info "$info "
 	end
 
-	# Append the current working dir
+	# Append the cwd
 	set info "$info"(set_color -o white)
 	set info "$info"(prompt_pwd)
 	set info "$info"(set_color -o $color_bg)
 
 	# Wrap the info
-	_nim_prompt_wrapper '' '' "$info"
+	_prompt_wrapper '' '' "$info"
+
+	# Virtual Environment
+	if ! set -q VIRTUAL_ENV_DISABLE_PROMPT
+		set -g VIRTUAL_ENV_DISABLE_PROMPT true
+	end
+
+	if set -q VIRTUAL_ENV
+		_prompt_wrapper $color_py  (basename "$VIRTUAL_ENV")
+	end
+
+	# git
+	set -l prompt_git (fish_git_prompt '%s')
+	if test -n "$prompt_git"
+		_prompt_wrapper $color_git  $prompt_git
+	end
+
+	# Battery status
+	type -q acpi
+	and test (acpi -a 2> /dev/null | string match -r off)
+	and _prompt_wrapper $retc B (acpi -b | cut -d' ' -f 4-)
 
 	# Vi-mode
 	if test "$fish_key_bindings" = fish_vi_key_bindings; or test "$fish_key_bindings" = fish_hybrid_key_bindings
@@ -95,29 +115,9 @@ function fish_nim_prompt
 
 		# Don't display the mode prompt if it's in its default state (insert)
 		if test $mode != 'I'
-			_nim_prompt_wrapper $color '' $mode
+			_prompt_wrapper $color '' $mode
 		end
 	end
-
-	# Virtual Environment
-	if ! set -q VIRTUAL_ENV_DISABLE_PROMPT
-		set -g VIRTUAL_ENV_DISABLE_PROMPT true
-	end
-
-	if set -q VIRTUAL_ENV
-		_nim_prompt_wrapper $color_py  (basename "$VIRTUAL_ENV")
-	end
-
-	# git
-	set -l prompt_git (fish_git_prompt '%s')
-	if test -n "$prompt_git"
-		_nim_prompt_wrapper $color_git  $prompt_git
-	end
-
-	# Battery status
-	type -q acpi
-		and test (acpi -a 2> /dev/null | string match -r off)
-		and _nim_prompt_wrapper $retc B (acpi -b | cut -d' ' -f 4-)
 
 	# New line
 	echo
@@ -143,11 +143,4 @@ function fish_nim_prompt
 		echo -n '$ '
 	end
 	set_color normal
-
-	# Clean up color variables
-	set -e color_bg
-	set -e color_ok
-	set -e color_err
-	set -e color_git
-	set -e color_py
 end
