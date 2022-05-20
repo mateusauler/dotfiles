@@ -54,7 +54,8 @@ set -x CCACHE_CONFIGPATH		$XDG_CONFIG_HOME/ccache.config
 set -x CCACHE_DIR				$XDG_CACHE_HOME/ccache
 set -x ANDROID_PREFS_ROOT		$XDG_CONFIG_HOME/android
 set -x ADB_KEYS_PATH			$ANDROID_PREFS_ROOT
-set -x ANDROID_EMULATOR_HOME	$XDG_DATA_HOME/android/emulator
+set -x ANDROID_HOME             $XDG_DATA_HOME/android
+set -x ANDROID_EMULATOR_HOME	$ANDROID_HOME/emulator
 set -x _JAVA_OPTIONS			-Djava.util.prefs.userRoot=$XDG_CONFIG_HOME/java
 set -x NPM_CONFIG_USERCONFIG    $XDG_CONFIG_HOME/npm/npmrc
 set -x NVM_DIR                  $XDG_DATA_HOME/nvm
@@ -64,6 +65,7 @@ set -x GRADLE_USER_HOME         $XDG_DATA_HOME/gradle
 set -x JUPYTER_CONFIG_DIR       $XDG_CONFIG_HOME/jupyter
 set -x CABAL_CONFIG             $XDG_CONFIG_HOME/cabal/config
 set -x CABAL_DIR                $XDG_CACHE_HOME/cabal
+set -x PYTHONSTARTUP            $XDG_CONFIG_HOME/python/pythonrc
 
 alias nvidia-settings	"nvidia-settings --config=$XDG_CONFIG_HOME/nvidia/settings"
 alias wget				"wget --hsts-file $XDG_CACHE_HOME/wget-hsts"
