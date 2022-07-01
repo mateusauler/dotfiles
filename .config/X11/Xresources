@@ -1,5 +1,5 @@
 #include "urxvt.Xresources"
 
-*.font: Droid Sans Mono Nerd Font:size=10
+*.font: FiraCode Nerd Font Mono:size=10
 
 #include "Xresources.d/iterm-Dracula.Xresources"
