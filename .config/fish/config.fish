@@ -75,11 +75,13 @@ alias sqlite3			"sqlite3 -init $XDG_CONFIG_HOME/sqlite3/sqliterc"
 
 set fish_greeting
 
-set -l short_dir $HOME/.local/bin
+set -l short_dir      $HOME/.local/bin
 set -l ccache_bin_dir /usr/lib/ccache/bin/
+set -l cargo_bin      $HOME/.local/share/cargo/bin
 
-echo $PATH | grep $ccache_bin_dir > /dev/null || set PATH "$ccache_bin_dir:$PATH"
-echo $PATH | grep $short_dir > /dev/null || set PATH "$short_dir:$PATH"
+echo $PATH | grep "$ccache_bin_dir" > /dev/null || set PATH "$ccache_bin_dir:$PATH"
+echo $PATH | grep "$short_dir"      > /dev/null || set PATH "$short_dir:$PATH"
+echo $PATH | grep "$cargo_bin"      > /dev/null || set PATH "$PATH:$cargo_bin"
 
 # aliases & abbreviations
 
