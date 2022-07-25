@@ -2,7 +2,7 @@
 
 if [ $# -ge 1 ]; then
 	wally-cli "$@" 2> /dev/null
-	sleep 4
+	sleep 1
 	rm "$@"
 fi
 toggle_lang br
