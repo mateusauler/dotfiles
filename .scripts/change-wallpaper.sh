@@ -4,7 +4,7 @@ dest=$HOME/pics/wallpaper
 
 cd $HOME/pics/wall
 
-file=$(ls | shuf | sxiv -oiqt | head -n 1)
+file=$(ls | shuf | nsxiv -oiqt | head -n 1)
 
 if [ ! -z $file ]; then
 	[ -f $dest ] | rm $dest
