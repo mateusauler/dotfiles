@@ -4,8 +4,8 @@ set -x TERM		 st-256color
 set -x TERMINAL	 $TERM
 set -x COLORTERM $TERM
 
-set -x VISUAL vim
-set -x EDITOR vim
+set -x VISUAL nvim
+set -x EDITOR nvim
 
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
@@ -49,7 +49,6 @@ set -x WINEPREFIX				$XDG_DATA_HOME/wineprefixes/default
 set -x GOPATH					$XDG_DATA_HOME/go
 set -x RXVT_SOCKET  			$XDG_RUNTIME_DIR/urxvtd
 set -x SQLITE_HISTORY			$XDG_DATA_HOME/sqlite_history
-set -x VIMINIT					'source $XDG_CONFIG_HOME/vim/vimrc'
 set -x CCACHE_CONFIGPATH		$XDG_CONFIG_HOME/ccache.config
 set -x CCACHE_DIR				$XDG_CACHE_HOME/ccache
 set -x ANDROID_PREFS_ROOT		$XDG_CONFIG_HOME/android
@@ -123,7 +122,11 @@ abbr --add pa "patch -p1 <"
 abbr --add p "paru"
 abbr --add z "zathura"
 
-abbr --add nsxiv "nsxiv -a"
+abbr --add vim "nvim"
+abbr --add n "nvim"
+abbr --add ni "neovide"
+
+abbr --add ns "nsxiv -a"
 
 alias upm "sudo reflector --verbose -p https,http -c \"Brazil,Chile,Paraguay,Colombia,Ecuador,United States,Worldwide\" -f 24 -a 168 --save /etc/pacman.d/mirrorlist"
 
