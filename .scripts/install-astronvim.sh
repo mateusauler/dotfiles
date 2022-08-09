@@ -9,4 +9,6 @@ then
 fi
 
 git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+
+unset VIMINIT
 nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
