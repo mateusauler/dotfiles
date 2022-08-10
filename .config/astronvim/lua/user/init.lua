@@ -4,7 +4,8 @@ return {
 			tabstop = 4,
 			softtabstop = 4,
 			shiftwidth = 4,
-			expandtab = false
+			expandtab = false,
+			guifont = {"FiraCode Nerd Font Mono", ":h10"}
 		},
 		g = {
 			coc_global_extensions = {"coc-flutter"}
