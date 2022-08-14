@@ -1,3 +1,3 @@
 # Installation
 
-` curl -Lk https://gist.githubusercontent.com/mateusauler/32658403d1495b92a1edfe47f2602c20/raw/ | /bin/bash `
+`curl -Lk https://raw.githubusercontent.com/mateusauler/dotfiles-deployer/main/run.sh | /bin/bash`
