@@ -149,4 +149,6 @@ if [ -z "$DISPLAY" ] && test (tty) = "/dev/tty1";
 	sx
 end
 
-tty | grep -E "^/dev/pts" &> /dev/null && type -q pfetch && pfetch
+if status --is-interactive
+	type -q pfetch && pfetch
+end
