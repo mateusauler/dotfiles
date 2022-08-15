@@ -13,7 +13,8 @@ return {
 	},
 	plugins = {
 		init = {
-			{"neoclide/coc.nvim", branch = "release"}
+			{"neoclide/coc.nvim", branch = "release"},
+			{"dag/vim-fish", branch = "master"}
 		}
 	}
 }
