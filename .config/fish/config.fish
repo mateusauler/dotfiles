@@ -65,6 +65,7 @@ set -x JUPYTER_CONFIG_DIR       $XDG_CONFIG_HOME/jupyter
 set -x CABAL_CONFIG             $XDG_CONFIG_HOME/cabal/config
 set -x CABAL_DIR                $XDG_CACHE_HOME/cabal
 set -x PYTHONSTARTUP            $XDG_CONFIG_HOME/python/pythonrc
+set -x HISTFILE                 $XDG_STATE_HOME/bash/history
 
 alias nvidia-settings	"nvidia-settings --config=$XDG_CONFIG_HOME/nvidia/settings"
 alias wget				"wget --hsts-file $XDG_CACHE_HOME/wget-hsts"
