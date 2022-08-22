@@ -15,7 +15,7 @@ set -x BROWSER_PROF "browser --ProfileManager"
 
 set -x WM dwm
 
-set -x CHROME_EXECUTABLE (which chromium)
+set -x CHROME_EXECUTABLE (which chromium 2> /dev/null)
 
 # fix android studio
 set -x _JAVA_AWT_WM_NONREPARENTING 1
