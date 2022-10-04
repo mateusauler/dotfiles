@@ -140,6 +140,7 @@ alias la "exa -laFb --group-directories-first"
 alias ll "exa -lFb --group-directories-first"
 
 alias rm "rm -I"
+alias cp "cp -r"
 
 fish_vi_key_bindings
 
