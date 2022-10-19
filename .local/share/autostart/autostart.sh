@@ -13,6 +13,7 @@ run_file $HOME/.screenlayout/screenlayout.sh &
 run_cmd picom --config $HOME/.config/picom/picom.conf &
 run_cmd redshift &
 run_cmd megasync &
+run_cmd syncthingtray &
 run_cmd flameshot &
 run_cmd nm-applet &
 run_cmd easyeffects --gapplication-service &
