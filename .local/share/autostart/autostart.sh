@@ -9,7 +9,7 @@ run $HOME/.screenlayout/screenlayout.sh &
 run picom --config $HOME/.config/picom/picom.conf &
 run redshift &
 run megasync &
-run syncthingtray &
+run syncthingtray --wait &
 run flameshot &
 run nm-applet &
 run easyeffects --gapplication-service &
