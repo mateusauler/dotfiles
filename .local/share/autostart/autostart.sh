@@ -1,7 +1,7 @@
 #!/bin/sh
 
 run() {
-	( [ -f $1 ] || command -v "$1" > /dev/null ) && $@
+	( [ -f $1 ] || command -v "$1" > /dev/null ) && exec $@
 }
 
 run toggle_lang br &
