@@ -136,8 +136,9 @@ alias upm "sudo reflector --verbose -p https,http -c \"Brazil,Chile,Paraguay,Col
 alias hexdump "hexdump -C"
 
 alias ls "exa --group-directories-first"
-alias la "exa -laFb --group-directories-first"
-alias ll "exa -lFb --group-directories-first"
+alias l  "ls"
+alias ll "ls -lFb"
+alias la "ll -a"
 
 alias rm "rm -I"
 alias cp "cp -r"
