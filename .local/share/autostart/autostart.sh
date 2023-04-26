@@ -1,20 +1,16 @@
 #!/bin/sh
 
-run() {
-	( [ -f $1 ] || command -v "$1" > /dev/null ) && exec $@
-}
-
-run toggle_lang br &
-run $HOME/.screenlayout/screenlayout.sh &
-run picom --config $HOME/.config/picom/picom.conf &
-run redshift &
-run megasync &
-run syncthingtray --wait &
-run flameshot &
-run nm-applet &
-run easyeffects --gapplication-service &
-run unclutter --timeout 3 --ignore-scrolling &
+rsp toggle_lang br &
+rsp $HOME/.screenlayout/screenlayout.sh &
+rsp picom --config $HOME/.config/picom/picom.conf &
+rsp redshift &
+rsp megasync &
+rsp syncthingtray --wait &
+rsp flameshot &
+rsp nm-applet &
+rsp easyeffects --gapplication-service &
+rsp unclutter --timeout 3 --ignore-scrolling &
 systemctl start --user dunst &
 systemctl start --user clipmenud &
-run /etc/X11/xinit/xinitrc.d/50-systemd-user.sh &
-run /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+rsp /etc/X11/xinit/xinitrc.d/50-systemd-user.sh &
+rsp /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
