@@ -6,6 +6,7 @@ set -x COLORTERM $TERM
 
 set -x VISUAL nvim
 set -x EDITOR nvim
+set -x DIFFPROG meld
 
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
