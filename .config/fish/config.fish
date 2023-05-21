@@ -82,8 +82,11 @@ function add_path
 	echo $PATH | grep "$argv[1]" > /dev/null || set PATH "$argv[1]:$PATH"
 end
 
+set -x XDG_DATA_DIRS "$HOME/.nix-profile/share:$XDG_DATA_DIRS"
+
 add_path "/usr/lib/ccache/bin/"
 add_path "$HOME/.local/share/cargo/bin"
+add_path "$HOME/.nix-profile/bin"
 add_path "$HOME/.local/bin"
 
 # aliases & abbreviations
