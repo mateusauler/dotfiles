@@ -135,7 +135,7 @@ abbr --add ni "neovide"
 
 abbr --add ns "nsxiv -a"
 
-alias upm "sudo reflector --verbose -p https,http -c \"Brazil,Chile,Paraguay,Colombia,Ecuador,United States,Worldwide\" -f 24 -a 168 --save /etc/pacman.d/mirrorlist"
+alias upm "sudo reflector --verbose -p https,http -c \"Brazil,Chile,Paraguay,Colombia,Ecuador,United States,Worldwide\" -f 24 -a 168 --save /etc/pacman.d/mirrorlist && bat /etc/pacman.d/mirrorlist"
 
 alias hexdump "hexdump -C"
 
