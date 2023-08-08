@@ -7,7 +7,7 @@ set -x VISUAL nvim
 set -x EDITOR nvim
 set -x DIFFPROG meld
 
-set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
+set -x MANPAGER "bat -l man -p"
 
 set -x BROWSER		browser
 set -x BROWSER_PRIV "browser -p"
