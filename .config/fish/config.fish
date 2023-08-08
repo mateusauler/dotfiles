@@ -148,13 +148,15 @@ alias cp "cp -r"
 
 fish_vi_key_bindings
 
-# startx if in tty1
+# Run graphical environment if loggin in on TTY1
 
 if [ -z "$DISPLAY" ] && test (tty) = "/dev/tty1";
 	test -f $HOME/.scripts/mount_devices.sh && $HOME/.scripts/mount_devices.sh &
 	lsmod | grep pcspkr > /dev/null && sudo rmmod pcspkr &
+	sleep 1
 #	startx "$XINITRC"
-	sx
+#	sx
+	Hyprland
 end
 
 if status --is-interactive
