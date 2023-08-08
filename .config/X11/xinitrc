@@ -12,7 +12,7 @@ xmodmap -e "keycode 135 = Super_L" # reassign Menu to Super_L so it works as the
 
 xset r rate 400 50
 
-while xsetroot -name " `amixer get Master | awk -F 'Left:|[][]' 'BEGIN {RS=""}{ print $3 }'` |  `setxkbmap -query | grep layout | awk '{print $2}'` | `[ $(command -v acpi) ] || acpi | grep 'rate information unavailable' &> /dev/null || $(acpi | grep 'Battery 0' &> /dev/null && echo "  $(acpi | grep -oE '[0-9]{,3}%')$(acpi | grep 'Charging' &> /dev/null && echo ' ⚡') | ")``date +\"%a %d/%m %H:%M:%S\"`"
+while xsetroot -name "  `amixer get Master | awk -F 'Left:|[][]' 'BEGIN {RS=""}{ print $3 }'` |  `setxkbmap -query | grep layout | awk '{print $2}'` | `[ $(command -v acpi) ] || acpi | grep 'rate information unavailable' &> /dev/null || $(acpi | grep 'Battery 0' &> /dev/null && echo "  $(acpi | grep -oE '[0-9]{,3}%')$(acpi | grep 'Charging' &> /dev/null && echo ' ⚡') | ")``date +\"%a %d/%m %H:%M:%S\"`"
 do
 	sleep 1
 done &
