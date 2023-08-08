@@ -17,6 +17,11 @@ set -x WM dwm
 
 set -x CHROME_EXECUTABLE (which chromium 2> /dev/null)
 
+# Multiple refresh rates on X11
+# set -x CLUTTER_DEFAULT_FPS      160
+# set -x __GL_SYNC_DISPLAY_DEVICE DP-4
+# set -x __GL_SYNC_TO_VBLANK      0
+
 # fix android studio
 set -x _JAVA_AWT_WM_NONREPARENTING 1
 
