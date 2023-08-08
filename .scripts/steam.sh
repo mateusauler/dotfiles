@@ -5,7 +5,7 @@ HOME=$XDG_DATA_HOME/Steam/fakehome
 
 # Replaces every / of the first argument with \/
 replace_slash() {
-	echo $1 | sed "s/\//\\\\\//g"
+	echo $1 | sed "s|/|\\\/|g"
 }
 
 # Symlink a file to the fake home
@@ -28,4 +28,4 @@ link_dir $OLDHOME/.icons  # ~/.icons (lxappearance's mouse cursor theme)
 # If .steam exists in ~/ and not in the fake home, move it to the fake home
 [ -d $OLDHOME/.steam ] && [ ! -d $HOME/.steam ] && mv $OLDHOME/.steam $HOME/
 
-exec /usr/bin/steam "$@"
+exec /usr/bin/steam $@
