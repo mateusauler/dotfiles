@@ -1,6 +1,5 @@
 # environment
 
-set -x TERM		 st-256color
 set -x TERMINAL	 $TERM
 set -x COLORTERM $TERM
 
