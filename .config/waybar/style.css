@@ -6,24 +6,13 @@
 
 window#waybar {
     background-color: rgba(43, 48, 59, 0.8);
-    /* border-bottom: 4px solid rgba(100, 114, 125, 0.5); */
     color: #ffffff;
-    transition-property: background-color;
-    transition-duration: .5s;
+    transition: box-shadow .5s;
 }
 
 window#waybar.hidden {
     opacity: 0.2;
 }
-
-/*
-window#waybar.empty {
-    background-color: transparent;
-}
-window#waybar.solo {
-    background-color: #FFFFFF;
-}
-*/
 
 window#waybar.termite {
     background-color: #3F3F3F;
@@ -61,13 +50,11 @@ button:hover {
 #workspaces button.active {
     background-color: #64727D;
     box-shadow: inset 0 -3px #ffffff;
-    transition-duration: .5s;
-    transition-property: background-color, box-shadow;
+    transition: box-shadow .5s, color .5s;
 }
 
 #workspaces button:not(.active) {
-    transition-duration: .5s;
-    transition-property: background-color, box-shadow;
+    transition: box-shadow .5s, color .5s;
 }
 
 #workspaces button.urgent {
@@ -108,7 +95,14 @@ button:hover {
 }
 
 #window {
-    border-bottom: 3px solid #ddd;
+    box-shadow: inset 0 -3px #ddd;
+    transition: box-shadow .5s, color .5s;
+}
+
+window#waybar.empty #window {
+    color: transparent;
+    box-shadow: none;
+    transition: none;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
